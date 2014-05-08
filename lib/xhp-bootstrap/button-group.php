@@ -20,25 +20,23 @@ final class :bootstrap:button-group extends :x:element {
   protected function render(): :xhp {
     $class = $this->getAttribute('orientation') === 'horizontal'
       ? 'btn-group' : 'btn-group-vertical';
+    $ret = <div class={$class}>{$this->getChildren()}</div>;
     switch ($this->getAttribute('size')) {
       case 'large':
-        $class .= ' btn-group-lg';
+        $ret->addClass('btn-group-lg');
         break;
       case 'small':
-        $class .= ' btn-group-sm';
+        $ret->addClass('btn-group-sm');
         break;
       case 'x-small':
-        $class .= ' btn-group-xs';
+        $ret->addClass('btn-group-xs');
         break;
     }
     if ($this->getAttribute('justified')) {
-      $class .= ' btn-group-justified';
+      $ret->addClass('btn-group-justified');
     }
 
-    return
-      <div class={$class}>
-        {$this->getChildren()}
-      </div>;
+    return $ret;
   }
 
   <<ExampleTitle('Basic usage')>>
