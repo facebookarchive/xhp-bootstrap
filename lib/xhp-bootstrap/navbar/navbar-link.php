@@ -3,7 +3,7 @@
 class :bootstrap:navbar:link extends :x:element {
   attribute
     bool active = false,
-    URI href @required;
+    Stringish href @required;
 
   children (pcdata);
 

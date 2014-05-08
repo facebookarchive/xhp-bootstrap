@@ -2,7 +2,7 @@
 
 class :bootstrap:navbar:brand extends :x:element {
   attribute
-    URI href @required,
+    Stringish href @required,
     :a;
 
   protected function render(): :xhp {

@@ -16,7 +16,7 @@ class :bootstrap:button extends :x:element {
       'small',
       'x-small'
     } size = 'default',
-    URI href,
+    Stringish href,
     :a;
 
   protected function render() {
