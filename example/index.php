@@ -44,7 +44,7 @@ print
           <bootstrap:container>
             <bootstrap:jumbotron title="Hello, world">
               <p>Herp derp</p>
-              <bootstrap:button use="primary" href="http://example.com">
+              <bootstrap:button use="primary" href="http://example.com" block={true}>
                 Foo
               </bootstrap:button>
               {' '}

@@ -16,6 +16,7 @@ class :bootstrap:button extends :x:element {
       'small',
       'x-small'
     } size = 'default',
+    bool block = false,
     Stringish href,
     :a;
 
@@ -32,6 +33,9 @@ class :bootstrap:button extends :x:element {
       case 'x-small':
         $class .= ' btn-xs';
         break;
+    }
+    if ($this->getAttribute('block')) {
+      $class .= ' btn-block';
     }
     return
       <a class={$class} href={$this->getAttribute('href')}>
