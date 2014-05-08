@@ -41,11 +41,27 @@ class :bootstrap:navbar extends :x:element {
     }
 
     return
-      <div class={$class} role="navigation">
+      <nav class={$class} role="navigation">
         <bootstrap:container>
           {$header}
           {$links}
         </bootstrap:container>
-      </div>;
+      </nav>;
+  }
+
+  public static function __example1() {
+    return
+      <bootstrap:navbar>
+        <bootstrap:navbar:brand href="#">Brand</bootstrap:navbar:brand>
+        <bootstrap:navbar:link href="#">
+          Link
+        </bootstrap:navbar:link>
+        <bootstrap:navbar:link href="#" active="true">
+          Active Link
+        </bootstrap:navbar:link>
+        <bootstrap:navbar:link href="#">
+          Another Link
+        </bootstrap:navbar:link>
+      </bootstrap:navbar>;
   }
 }
