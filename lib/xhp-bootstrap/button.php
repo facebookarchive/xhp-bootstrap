@@ -25,9 +25,16 @@ class :bootstrap:button extends :bootstrap:base {
 
   protected function render(): :xhp {
     $ret =
-      <a class="btn" href={$this->getAttribute('href')}>
+      <a href={$this->getAttribute('href')}>
         {$this->getChildren()}
       </a>;
+    $this->transferAttributes(
+      $ret,
+      Vector { 'class', 'href' }
+    );
+    $this->transferSpecialAttributes($ret);
+
+    $ret->addClass('btn');
     $ret->addClass('btn-'.$this->getAttribute('use'));
 
     switch ($this->getAttribute('size')) {
