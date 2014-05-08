@@ -17,29 +17,32 @@ class :bootstrap:button extends :x:element {
       'x-small'
     } size = 'default',
     bool block = false,
-    Stringish href,
-    :a;
+    Stringish href;
 
   protected function render() {
-    $class = 'btn btn-'.$this->getAttribute('use');
-    $size = $this->getAttribute('size');
-    switch ($size) {
+    $ret =
+      <a class="btn" href={$this->getAttribute('href')}>
+        {$this->getChildren()}
+      </a>;
+
+    $use = $this->getAttribute('use');
+    if ($use !== 'default') {
+      $ret->addClass('btn-'.$use);
+    }
+    switch ($this->getAttribute('size')) {
       case 'large':
-        $class .= ' btn-lg';
+        $ret->addClass('btn-lg');
         break;
       case 'small':
-        $class .= ' btn-sm';
+        $ret->addClass('btn-sm');
         break;
       case 'x-small':
-        $class .= ' btn-xs';
+        $ret->addClass('btn-xs');
         break;
     }
     if ($this->getAttribute('block')) {
-      $class .= ' btn-block';
+      $ret->addClass('btn-block');
     }
-    return
-      <a class={$class} href={$this->getAttribute('href')}>
-        {$this->getChildren()}
-      </a>;
+    return $ret;
   }
 }
