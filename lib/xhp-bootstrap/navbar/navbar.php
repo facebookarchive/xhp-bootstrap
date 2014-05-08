@@ -19,11 +19,6 @@ class :bootstrap:navbar extends :x:element {
     $style = $this->getAttribute('style');
     $position = $this->getAttribute('position');
 
-    $class = 'navbar navbar-'.$style;
-    if ($position !== 'default') {
-      $class .= ' navbar-'.$position;
-    }
-
     $header = $this->getChildren('bootstrap:navbar:brand');
     if ($header) {
       $header =
@@ -40,13 +35,19 @@ class :bootstrap:navbar extends :x:element {
         </ul>;
     }
 
-    return
-      <nav class={$class} role="navigation">
+    $ret =
+      <nav class="navbar" role="navigation">
         <bootstrap:container>
           {$header}
           {$links}
         </bootstrap:container>
       </nav>;
+
+    $ret->addClass('navbar-'.$style);
+    if ($position !== 'default') {
+      $ret->addClass('navbar-'.$position);
+    }
+    return $ret;
   }
 
   public static function __example1() {
