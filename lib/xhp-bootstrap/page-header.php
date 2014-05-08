@@ -4,7 +4,7 @@ class :bootstrap:page-header extends :x:element {
   attribute
     string title @required;
 
-  protected function render(): xhp {
+  protected function render(): :xhp {
     $lead = $this->getChildren();
     if ($lead) {
       $lead = <p class="lead">{$lead}</p>;

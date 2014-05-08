@@ -16,4 +16,22 @@ class :bootstrap:jumbotron extends :x:element {
       {$this->getChildren()}
       </div>;
   }
+
+  <<ExampleTitle('Simple Usage')>>
+  public static function __example1(): :xhp {
+    return
+      <bootstrap:jumbotron title="Hello, world">
+        <p>
+          Buy my product and your life will be filled with unicorns and
+          rainbows.
+        </p>
+        <bootstrap:button use="primary" href="http://example.com">
+          Buy now
+        </bootstrap:button>
+        {' '}
+        <bootstrap:button use="info" href="http://example.com">
+          Tell me more
+        </bootstrap:button>
+      </bootstrap:jumbotron>;
+  }
 }

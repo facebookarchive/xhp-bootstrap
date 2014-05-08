@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 /* TODO: replace with composer classmap autoloader when
  * https://github.com/composer/composer/pull/2912 + related issues are in a
@@ -27,7 +27,7 @@ class TerribleAutoloader {
           // Mangle...
           $classes[] = 'xhp_'.str_replace([':', '-'], ['__', '_'], $value);
         } else if ($type === T_STRING) {
-          $classes[] = $value;
+          $classes[] = strtolower($value);
         }
       }
 
@@ -50,12 +50,25 @@ class TerribleAutoloader {
     return $classes;
   }
 
-  public static function init() {
-    $dirs = ['../lib/', '../vendor/facebook/xhp/php-lib/'];
-    $classes = array();
-    foreach ($dirs as $dir) {
-      $classes += self::classesInDir($dir);
+  private static ?array $classMap;
+  public static function GetClassMap(): array<string, string> {
+    if (self::$classMap === null) {
+      $dirs = ['../lib/', '../vendor/facebook/xhp/php-lib/', './'];
+      $classes = array();
+      foreach ($dirs as $dir) {
+        $classes += self::classesInDir($dir);
+      }
+      self::$classMap = $classes;
     }
-    HH\autoload_set_paths(array('class' => $classes), __DIR__);
+    return self::$classMap;
+  }
+
+  private static bool $inited = false;
+  public static function Init() {
+    if (self::$inited) {
+      return;
+    }
+    self::$inited = true;
+    HH\autoload_set_paths(array('class' => self::GetClassMap()), __DIR__);
   }
 }
