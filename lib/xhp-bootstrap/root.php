@@ -1,6 +1,8 @@
 <?hh
 
-class :bootstrap:root extends :x:element {
+class :bootstrap:root extends :bootstrap:base {
+  attribute :bootstrap:base;
+
   children (
     :bootstrap:navbar?,
     :bootstrap:container*,

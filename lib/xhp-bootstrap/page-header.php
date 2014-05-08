@@ -1,9 +1,10 @@
 <?hh
 
-class :bootstrap:page-header extends :x:element {
+class :bootstrap:page-header extends :bootstrap:base {
   attribute
     string title @required,
-    string subtext;
+    string subtext,
+    :bootstrap:base;
 
   protected function render(): :xhp {
     $subtext = $this->getAttribute('subtext');

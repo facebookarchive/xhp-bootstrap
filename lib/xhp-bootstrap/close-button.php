@@ -1,6 +1,6 @@
 <?hh
 
-final class :bootstrap:close-button extends :x:element {
+final class :bootstrap:close-button extends :bootstrap:base {
   attribute :button;
 
   protected function render(): :xhp {

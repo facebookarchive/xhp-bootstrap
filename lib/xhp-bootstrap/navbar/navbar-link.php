@@ -1,9 +1,10 @@
 <?hh
 
-class :bootstrap:navbar:link extends :x:element {
+class :bootstrap:navbar:link extends :bootstrap:base {
   attribute
     bool active = false,
-    Stringish href @required;
+    Stringish href @required,
+    :bootstrap:base;
 
   children (pcdata);
 
