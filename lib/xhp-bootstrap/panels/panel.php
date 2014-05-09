@@ -21,10 +21,11 @@ class :bootstrap:panel extends :bootstrap:base {
 
   protected function render(): :xhp {
     $ret =
-      <div class="panel">
+      <div class={$this->getAttribute('class')}>
         {$this->getChildren()}
       </div>;
 
+    $ret->addClass('panel');
     $ret->addClass('panel-'.$this->getAttribute('use'));
     return $ret;
   }

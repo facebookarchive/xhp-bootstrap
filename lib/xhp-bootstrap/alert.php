@@ -15,10 +15,11 @@ final class :bootstrap:alert extends :bootstrap:base {
       $child->addClass('alert-link');
     }
     $ret =
-      <div class="alert">
+      <div class={$this->getAttribute('class')}>
         {$this->getChildren()}
       </div>;
 
+    $ret->addClass('alert');
     $ret->addClass('alert-'.$this->getAttribute('use'));
 
     return $ret;
