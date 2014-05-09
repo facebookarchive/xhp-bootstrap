@@ -1,15 +1,15 @@
 <?hh
 
-class :bootstrap:alert extends :bootstrap:base {
+final class :bootstrap:alert extends :bootstrap:base {
   attribute
     enum {
       'success',
       'info',
       'warning',
       'danger'
-    } severity = 'warning',
+    } use = 'warning',
     :bootstrap:base;
-    
+
   protected function render(): :xhp {
     foreach($this->getChildren('a') as $child) {
       $child->addClass('alert-link');
@@ -19,25 +19,25 @@ class :bootstrap:alert extends :bootstrap:base {
         {$this->getChildren()}
       </div>;
 
-    $ret->addClass('alert-'.$this->getAttribute('severity'));
+    $ret->addClass('alert-'.$this->getAttribute('use'));
 
-    return $ret;    
+    return $ret;
   }
 
   <<ExampleTitle('Uses')>>
   public static function __example1() {
     return
       <x:frag>
-        <bootstrap:alert severity="success">
+        <bootstrap:alert use="success">
           You rock
         </bootstrap:alert>
-        <bootstrap:alert severity="info">
+        <bootstrap:alert use="info">
           Maybe you rock
         </bootstrap:alert>
-        <bootstrap:alert severity="warning">
+        <bootstrap:alert use="warning">
           WAT??
         </bootstrap:alert>
-        <bootstrap:alert severity="danger">
+        <bootstrap:alert use="danger">
           May day May day
           <a href="https://somewhere.com">Go here</a>
         </bootstrap:alert>
