@@ -1,7 +1,7 @@
 <?hh
 
-class :bootstrap:container extends :x:element {
-  attribute :div;
+class :bootstrap:container extends :bootstrap:base {
+  attribute :div, :bootstrap:base;
 
   protected function render(): :xhp {
     return

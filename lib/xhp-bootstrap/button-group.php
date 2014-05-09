@@ -1,6 +1,6 @@
 <?hh
 
-final class :bootstrap:button-group extends :x:element {
+final class :bootstrap:button-group extends :bootstrap:base {
 
   attribute
     enum {
@@ -13,7 +13,8 @@ final class :bootstrap:button-group extends :x:element {
       'small',
       'x-small'
     } size = 'default',
-    bool justified = false;
+    bool justified = false,
+    :bootstrap:base;
 
   children ((:bootstrap:button|:bootstrap:button-group)+);
 

@@ -1,6 +1,6 @@
 <?hh
 
-class :bootstrap:navbar extends :x:element {
+class :bootstrap:navbar extends :bootstrap:base {
   attribute
     enum { 'default', 'inverse' } style = 'default',
     enum {
@@ -8,7 +8,8 @@ class :bootstrap:navbar extends :x:element {
       'fixed-top',
       'static-top',
       'fixed-bottom'
-    } position = 'default';
+    } position = 'default',
+    :bootstrap:base;
 
   children (
     :bootstrap:navbar:brand?,

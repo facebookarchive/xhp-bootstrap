@@ -1,8 +1,9 @@
 <?hh
 
-class :bootstrap:jumbotron extends :x:element {
+final class :bootstrap:jumbotron extends :bootstrap:base {
   attribute
-    string title;
+    string title,
+    :bootstrap:base;
 
   protected function render(): :xhp {
     $title = $this->getAttribute('title');

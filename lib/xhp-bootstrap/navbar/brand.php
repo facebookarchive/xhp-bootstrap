@@ -1,9 +1,10 @@
 <?hh
 
-class :bootstrap:navbar:brand extends :x:element {
+class :bootstrap:navbar:brand extends :bootstrap:base {
   attribute
     Stringish href @required,
-    :a;
+    :a,
+    :bootstrap:base;
 
   protected function render(): :xhp {
     return

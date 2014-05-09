@@ -1,6 +1,6 @@
 <?hh
 
-class :bootstrap:button extends :x:element {
+class :bootstrap:button extends :bootstrap:base {
   attribute
     enum {
       'default',
@@ -20,7 +20,8 @@ class :bootstrap:button extends :x:element {
     bool block = false,
     bool active = false,
     bool disabled = false,
-    Stringish href;
+    Stringish href,
+    :bootstrap:base;
 
   protected function render(): :xhp {
     $ret =
