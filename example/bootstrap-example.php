@@ -8,13 +8,13 @@ final class :bootstrap:example extends :x:element {
     $example = $this->getAttribute('example');
 
     return
-      <bootstrap:container>
+      <div>
         <h1>{$this->getTitle()}</h1>
         <h2>Source</h2>
         {$this->renderSource()}
         <h2>Output</h2>
         {$this->renderOutput()}
-      </bootstrap:container>;
+      </div>;
   }
 
   private function renderSource(): :xhp {
@@ -39,9 +39,9 @@ final class :bootstrap:example extends :x:element {
   private function renderOutput(): :xhp {
     $example = $this->getAttribute('example');
     return
-      <bootstrap:container>
+      <div>
         {$example->invoke(null)}
-      </bootstrap:container>;
+      </div>;
   }
 
   private function getTitle(): XhpChild {
