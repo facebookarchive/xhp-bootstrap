@@ -52,6 +52,14 @@ print
                 Bar
               </bootstrap:button>
             </bootstrap:jumbotron>
+            <bootstrap:panel use="danger">
+              <bootstrap:panel:heading>
+                Help help
+              </bootstrap:panel:heading>
+              <bootstrap:panel:body>
+                Something is wrong
+              </bootstrap:panel:body>
+            </bootstrap:panel>
           </bootstrap:container>
         </bootstrap:root>
       </body>
