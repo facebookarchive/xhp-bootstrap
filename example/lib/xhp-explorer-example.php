@@ -1,6 +1,6 @@
 <?hh
 
-final class :bootstrap:example extends :x:element {
+final class :xhp-explorer:example extends :x:element {
   attribute
     ReflectionMethod example @required;
 
