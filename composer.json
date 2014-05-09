@@ -1,5 +1,6 @@
 {
   "require": {
-    "facebook/xhp": "dev-master"
+    "facebook/xhp": "dev-master",
+    "hhvm": "3.0.1"
   }
 }
