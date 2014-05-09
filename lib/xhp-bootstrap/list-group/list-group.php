@@ -46,16 +46,16 @@ final class :bootstrap:list-group extends :bootstrap:base {
   public static function __example3() {
     return
       <bootstrap:list-group>
-        <bootstrap:list-group-item href="#" context="success">
+        <bootstrap:list-group-item href="#" use="success">
           Cras justo odio
         </bootstrap:list-group-item>
-        <bootstrap:list-group-item href="#" context="info">
+        <bootstrap:list-group-item href="#" use="info">
           Dapibus ac facilisis in
         </bootstrap:list-group-item>
-        <bootstrap:list-group-item href="#" context="warning">
+        <bootstrap:list-group-item href="#" use="warning">
           Morbi leo risus
         </bootstrap:list-group-item>
-        <bootstrap:list-group-item href="#" context="danger">
+        <bootstrap:list-group-item href="#" use="danger">
           Porta ac consectetur ac
         </bootstrap:list-group-item>
       </bootstrap:list-group>;

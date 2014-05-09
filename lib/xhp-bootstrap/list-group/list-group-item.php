@@ -8,22 +8,19 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
       'warning',
       'danger',
       'none'
-    } context,
+    } use,
     bool active = false,
     :bootstrap:base,
     :a;
 
   protected function render(): :xhp {
     $ret = <a>{$this->getChildren()}</a>;
-    $href = $this->getAttribute('href');
-    if ($href) {
-      $ret->setAttribute('href', $href);
-    }
+    $this->transferAttributesExcept($ret, Set {'active', 'use'});
     if ($this->getAttribute('active')) {
       $ret->addClass('active');
     }
     $ret->addClass('list-group-item');
-    switch ($this->getAttribute('context')) {
+    switch ($this->getAttribute('use')) {
       case 'success':
         $ret->addClass('list-group-item-success');
         break;
@@ -39,7 +36,4 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
     }
     return $ret;
   }
-
 }
-
-
