@@ -2,7 +2,7 @@
 
 class :bootstrap:navbar extends :bootstrap:base {
   attribute
-    enum { 'default', 'inverse' } style = 'default',
+    enum { 'default', 'inverse' } theme = 'default',
     enum {
       'default',
       'fixed-top',
@@ -17,7 +17,7 @@ class :bootstrap:navbar extends :bootstrap:base {
   );
 
   protected function render(): :xhp {
-    $style = $this->getAttribute('style');
+    $theme = $this->getAttribute('theme');
     $position = $this->getAttribute('position');
 
     $header = $this->getChildren('bootstrap:navbar:brand');
@@ -44,16 +44,34 @@ class :bootstrap:navbar extends :bootstrap:base {
         </bootstrap:container>
       </nav>;
 
-    $ret->addClass('navbar-'.$style);
+    $ret->addClass('navbar-'.$theme);
     if ($position !== 'default') {
       $ret->addClass('navbar-'.$position);
     }
     return $ret;
   }
 
+  <<ExampleTitle('Default Theme')>>
   public static function __example1() {
     return
       <bootstrap:navbar>
+        <bootstrap:navbar:brand href="#">Brand</bootstrap:navbar:brand>
+        <bootstrap:navbar:link href="#">
+          Link
+        </bootstrap:navbar:link>
+        <bootstrap:navbar:link href="#" active="true">
+          Active Link
+        </bootstrap:navbar:link>
+        <bootstrap:navbar:link href="#">
+          Another Link
+        </bootstrap:navbar:link>
+      </bootstrap:navbar>;
+  }
+
+  <<ExampleTitle('Inverse Theme')>>
+  public static function __example2() {
+    return
+      <bootstrap:navbar theme="inverse">
         <bootstrap:navbar:brand href="#">Brand</bootstrap:navbar:brand>
         <bootstrap:navbar:link href="#">
           Link
