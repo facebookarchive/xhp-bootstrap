@@ -60,22 +60,16 @@ print
               {$examples->map($x ==> <bootstrap:example example={$x} />)}
             </bootstrap:container>
             <bootstrap:container class="col-xs-6 col-sm-3">
-              <div class="list-group">
+              <bootstrap:list-group>
                 {$bootstrap_classes->map(
-                  $class_name ==> {
-                    $link =
-                      <a
-                        class="list-group-item"
-                        href={"example.php?classname=".$class_name}>
-                        {prettify_class($class_name)}
-                      </a>;
-                    if ($class_name === $class) {
-                      $link->addClass('active');
-                    }
-                    return $link;
-                  },
+                  $class_name ==>
+                    <bootstrap:list-group-item
+                      href={"example.php?classname=".$class_name}
+                      active={$class_name === $class}>
+                      {prettify_class($class_name)}
+                    </bootstrap:list-group-item>
                 )}
-              </div>
+              </bootstrap:list-group>
             </bootstrap:container>
           </bootstrap:container>
         </bootstrap:root>
