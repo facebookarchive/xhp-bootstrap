@@ -1,5 +1,6 @@
 <?hh
 
+<<ExamplesInClass(':bootstrap:dropdown')>>
 final class :bootstrap:dropdown:menu extends :bootstrap:base {
   children ((:bootstrap:dropdown:item|:bootstrap:dropdown:divider)*);
 

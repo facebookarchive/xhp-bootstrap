@@ -3,14 +3,10 @@
 require_once('lib/TerribleAutoloader.php');
 TerribleAutoloader::Init();
 
-$bootstrap_classes = ExamplesData::GetClassesWithExamples();
+$bootstrap_classes = ExamplesData::GetBootstrapClasses();
 $class = array_key_exists('classname', $_GET)
-  ? $_GET['classname'] : $bootstrap_classes->keys()->at(0);
-$examples = Vector { };
-if ($bootstrap_classes->containsKey($class)) {
-  $examples = $bootstrap_classes[$class];
-}
-$bootstrap_classes = $bootstrap_classes->keys();
+  ? $_GET['classname'] : $bootstrap_classes->at(0);
+$examples = ExamplesData::GetExamples($class);
 sort($bootstrap_classes);
 
 function prettify_class(string $mangled): string {

@@ -1,11 +1,15 @@
 <?hh
 
 class ExamplesData {
-  private static function GetBootstrapClasses(): Vector<string> {
+  public static function GetBootstrapClasses(): Vector<string> {
     $all_classes = Vector::fromArray(
       array_keys(TerribleAutoloader::GetClassMap()
     ));
-    return $all_classes->filter($x ==> strpos($x, 'xhp_bootstrap__') === 0);
+    return $all_classes->filter(
+      $x ==>
+        strpos($x, 'xhp_bootstrap__') === 0
+        && !(new ReflectionClass($x))->isAbstract()
+    );
   }
 
   public static function GetExamples(string $class): Vector<ReflectionMethod> {
@@ -14,6 +18,11 @@ class ExamplesData {
     }
 
     $rc = new ReflectionClass($class);
+    if ((list($example_class) = $rc->getAttribute('ExamplesInClass'))) {
+      $mangled =
+        'xhp_'.str_replace([':', '-'], ['__', '_'], substr($example_class, 1));
+      $rc = new ReflectionClass($mangled);
+    }
     $candidates = $rc->getMethods(
       ReflectionMethod::IS_STATIC | ReflectionMethod::IS_PUBLIC
     );
