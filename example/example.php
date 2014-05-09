@@ -3,9 +3,14 @@
 require_once('TerribleAutoloader.php');
 TerribleAutoloader::Init();
 
-$bootstrap_classes = ExamplesData::GetBootstrapClasses();
-$class = $_GET['classname'] ?: $bootstrap_classes[0];
-$examples = ExamplesData::GetExamples($class);
+$bootstrap_classes = ExamplesData::GetClassesWithExamples();
+$class = array_key_exists('classname', $_GET)
+  ? $_GET['classname'] : $bootstrap_classes->keys()->at(0);
+$examples = Vector { };
+if ($bootstrap_classes->containsKey($class)) {
+  $examples = $bootstrap_classes[$class];
+}
+$bootstrap_classes = $bootstrap_classes->keys();
 
 print
   <x:doctype>
