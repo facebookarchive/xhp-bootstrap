@@ -1,5 +1,4 @@
 *.swp
 *.orig
 vendor/
-composer.lock
 www.pid

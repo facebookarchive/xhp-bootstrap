@@ -1,7 +1,7 @@
 <?hh
 
 class ExamplesData {
-  public static function GetBootstrapClasses(): Vector<string> {
+  private static function GetBootstrapClasses(): Vector<string> {
     $all_classes = Vector::fromArray(
       array_keys(TerribleAutoloader::GetClassMap()
     ));
