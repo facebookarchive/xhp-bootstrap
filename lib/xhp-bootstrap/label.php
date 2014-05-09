@@ -26,11 +26,11 @@ final class :bootstrap:label extends :bootstrap:base {
   public static function __example1(): :xhp {
     return
       <x:frag>
-        <bootstrap:label>Default</bootstrap:label>{' '}
-        <bootstrap:label use="primary">Primary</bootstrap:label>{' '}
-        <bootstrap:label use="success">Success</bootstrap:label>{' '}
-        <bootstrap:label use="info">Info</bootstrap:label>{' '}
-        <bootstrap:label use="warning">Warning</bootstrap:label>{' '}
+        <bootstrap:label>Default</bootstrap:label>
+        <bootstrap:label use="primary">Primary</bootstrap:label>
+        <bootstrap:label use="success">Success</bootstrap:label>
+        <bootstrap:label use="info">Info</bootstrap:label>
+        <bootstrap:label use="warning">Warning</bootstrap:label>
         <bootstrap:label use="danger">Danger</bootstrap:label>
       </x:frag>;
   }
