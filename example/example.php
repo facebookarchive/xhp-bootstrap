@@ -1,6 +1,6 @@
 <?hh
 
-require_once('TerribleAutoloader.php');
+require_once('lib/TerribleAutoloader.php');
 TerribleAutoloader::Init();
 
 $bootstrap_classes = ExamplesData::GetClassesWithExamples();
@@ -11,12 +11,21 @@ if ($bootstrap_classes->containsKey($class)) {
   $examples = $bootstrap_classes[$class];
 }
 $bootstrap_classes = $bootstrap_classes->keys();
+sort($bootstrap_classes);
+
+function prettify_class(string $mangled): string {
+  return preg_replace(
+    '/^xhp-/',
+    '<',
+    str_replace(['__', '_'], [':', '-'], $mangled)
+  ).' />';
+}
 
 print
   <x:doctype>
     <html>
       <head>
-        <title>{$class}</title>
+        <title>{prettify_class($class)}</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
@@ -32,9 +41,11 @@ print
           href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"
         />
         <!-- Bootstrap JS requires JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
         <!-- Latest compiled and minified JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" />
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js" />
+        <link rel="stylesheet" href="./styles.css" />
       </head>
       <body>
         <bootstrap:root>
@@ -44,7 +55,7 @@ print
             </bootstrap:navbar:brand>
           </bootstrap:navbar>
           <bootstrap:container>
-            <bootstrap:page-header title={$class} />
+            <bootstrap:page-header title={prettify_class($class)} />
             <bootstrap:container class="col-xs-12 col-sm-9">
               {$examples->map($x ==> <bootstrap:example example={$x} />)}
             </bootstrap:container>
@@ -56,7 +67,7 @@ print
                       <a
                         class="list-group-item"
                         href={"example.php?classname=".$class_name}>
-                        {$class_name}
+                        {prettify_class($class_name)}
                       </a>;
                     if ($class_name === $class) {
                       $link->addClass('active');

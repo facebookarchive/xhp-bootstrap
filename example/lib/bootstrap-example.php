@@ -9,11 +9,17 @@ final class :bootstrap:example extends :x:element {
 
     return
       <div>
-        <h1>{$this->getTitle()}</h1>
-        <h2>Source</h2>
-        {$this->renderSource()}
-        <h2>Output</h2>
-        {$this->renderOutput()}
+        <bootstrap:panel>
+          <bootstrap:panel:heading>
+            <h3 class="panel-title">{$this->getTitle()}</h3>
+          </bootstrap:panel:heading>
+          <bootstrap:panel:body>
+            {$this->renderOutput()}
+          </bootstrap:panel:body>
+          <bootstrap:panel:footer>
+            {$this->renderSource()}
+          </bootstrap:panel:footer>
+        </bootstrap:panel>
       </div>;
   }
 
@@ -29,17 +35,15 @@ final class :bootstrap:example extends :x:element {
     );
 
     return
-      <pre>
-        <code>
-          {implode("\n", $source_lines)}
-        </code>
+      <pre class="prettyprint lang-php">
+        {implode("\n", $source_lines)}
       </pre>;
   }
 
   private function renderOutput(): :xhp {
     $example = $this->getAttribute('example');
     return
-      <div>
+      <div class="example">
         {$example->invoke(null)}
       </div>;
   }
