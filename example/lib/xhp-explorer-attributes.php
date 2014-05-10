@@ -8,7 +8,14 @@ final class :xhp-explorer:attributes extends :x:element {
     $rows = Vector { };
     $class = $this->getAttribute('classname');
     $attrs = $class::__xhpAttributeDeclaration();
+    $skip = new Set(array_keys(
+      :xhp:html-element::__xhpAttributeDeclaration()
+    ));
     foreach ($attrs as $name => $spec) {
+      if ($skip->contains($name)) {
+        continue;
+      }
+
       list($type, $extra_type, $default, $required) = $spec;
 
       switch ($type) {
@@ -53,7 +60,7 @@ final class :xhp-explorer:attributes extends :x:element {
         if (empty($required)) {
           $default = <em>none</em>;
         } else {
-          $default = 
+          $default =
             <bootstrap:label use="warning">required</bootstrap:label>;
         }
       } else {
