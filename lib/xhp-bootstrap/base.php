@@ -40,10 +40,18 @@ abstract class :bootstrap:base extends :x:element {
     }
   }
 
-  final protected function transferCustomAttributes(:xhp $target): void {
+  final protected function transferCustomAttributesExcept(
+    :xhp $target,
+    Set<string> $ignore,
+  ): void {
+    $ignore_set = new Set(
+      array_keys(:xhp:html-element::__xhpAttributeDeclaration())
+    );
+    $ignore_set->addAll($ignore);
+
     $this->transferAttributesExcept(
       $target,
-      new Set(array_keys(:xhp:html-element::__xhpAttributeDeclaration()))
+      $ignore_set,
     );
   }
 

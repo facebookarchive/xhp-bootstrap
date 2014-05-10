@@ -2,7 +2,7 @@
 
 <<ExamplesInClass(':bootstrap:dropdown')>>
 final class :bootstrap:dropdown:menu extends :bootstrap:base {
-  children ((:bootstrap:dropdown:item|:bootstrap:dropdown:divider)*);
+  children (%bootstrap:dropdown:element*);
 
   protected function render(): :xhp {
     return
