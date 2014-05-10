@@ -13,7 +13,7 @@ class :bootstrap:navbar extends :bootstrap:base {
 
   children (
     :bootstrap:navbar:brand?,
-    :bootstrap:navbar:link*
+    %bootstrap:navbar:item*
   );
 
   protected function render(): :xhp {
@@ -28,7 +28,7 @@ class :bootstrap:navbar extends :bootstrap:base {
         </div>;
     }
 
-    $links = $this->getChildren('bootstrap:navbar:link');
+    $links = $this->getChildren('%bootstrap:navbar:item');
     if ($links) {
       $links =
         <ul class="nav navbar-nav">
@@ -64,6 +64,27 @@ class :bootstrap:navbar extends :bootstrap:base {
         <bootstrap:navbar:link href="#">
           Another Link
         </bootstrap:navbar:link>
+        <bootstrap:navbar:dropdown>
+          <a href="#">
+            Dropdown
+            <bootstrap:caret />
+          </a>
+          <bootstrap:dropdown:menu>
+            <bootstrap:dropdown:item href="#">
+              Foo
+            </bootstrap:dropdown:item>
+            <bootstrap:dropdown:item href="#">
+              Bar
+            </bootstrap:dropdown:item>
+            <bootstrap:dropdown:divider />
+            <bootstrap:dropdown:item href="#">
+              Herp
+            </bootstrap:dropdown:item>
+            <bootstrap:dropdown:item href="#">
+              Derp
+            </bootstrap:dropdown:item>
+          </bootstrap:dropdown:menu>
+        </bootstrap:navbar:dropdown>
       </bootstrap:navbar>;
   }
 }
