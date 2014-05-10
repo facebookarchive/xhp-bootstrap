@@ -1,5 +1,6 @@
 <?hh
 
+<<ExamplesInClass(':bootstrap:navbar')>>
 class :bootstrap:navbar:link extends :bootstrap:base {
   attribute
     bool active = false,

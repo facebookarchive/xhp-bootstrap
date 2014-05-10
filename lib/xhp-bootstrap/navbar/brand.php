@@ -1,5 +1,6 @@
 <?hh
 
+<<ExamplesInClass(':bootstrap:navbar')>>
 class :bootstrap:navbar:brand extends :bootstrap:base {
   attribute
     Stringish href @required,

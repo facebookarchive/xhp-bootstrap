@@ -1,5 +1,6 @@
 <?hh
 
+<<ExamplesInClass(':bootstrap:list-group')>>
 final class :bootstrap:list-group-item extends :bootstrap:base {
   attribute
     enum {

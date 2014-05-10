@@ -1,5 +1,6 @@
 <?hh
 
+<<ExamplesInClass(':bootstrap:dropdown')>>
 final class :bootstrap:dropdown:item extends :bootstrap:base {
   attribute :a, :bootstrap:base;
 
