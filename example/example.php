@@ -49,7 +49,7 @@ print
       </head>
       <body>
         <bootstrap:root>
-          <bootstrap:navbar position="static-top" style="inverse">
+          <bootstrap:navbar position="static-top" theme="inverse">
             <bootstrap:navbar:brand href="#">
               XHP Bootstrap
             </bootstrap:navbar:brand>
