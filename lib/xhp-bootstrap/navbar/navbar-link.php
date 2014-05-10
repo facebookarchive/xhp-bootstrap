@@ -8,6 +8,8 @@ class :bootstrap:navbar:link extends :bootstrap:base {
 
   children (pcdata);
 
+  category %bootstrap:navbar:item;
+
   protected function render(): :xhp {
     return
       <li class={$this->getAttribute('active') ? 'active' : null}>
