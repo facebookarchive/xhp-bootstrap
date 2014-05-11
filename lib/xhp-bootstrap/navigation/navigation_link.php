@@ -1,7 +1,7 @@
 <?hh
 
 <<ExamplesInClass(':bootstrap:navbar')>>
-class :bootstrap:navbar:link extends :bootstrap:base {
+class :bootstrap:navigation:link extends :bootstrap:base {
   attribute
     bool active = false,
     Stringish href @required,
@@ -9,7 +9,7 @@ class :bootstrap:navbar:link extends :bootstrap:base {
 
   children (pcdata);
 
-  category %bootstrap:navbar:item;
+  category %bootstrap:navigation:item;
 
   protected function render(): :xhp {
     return

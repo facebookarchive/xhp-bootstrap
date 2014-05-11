@@ -13,7 +13,7 @@ class :bootstrap:navbar extends :bootstrap:base {
 
   children (
     :bootstrap:navbar:brand?,
-    %bootstrap:navbar:item*
+    %bootstrap:navigation:item*
   );
 
   protected function render(): :xhp {
@@ -28,7 +28,7 @@ class :bootstrap:navbar extends :bootstrap:base {
         </div>;
     }
 
-    $links = $this->getChildren('%bootstrap:navbar:item');
+    $links = $this->getChildren('%bootstrap:navigation:item');
     if ($links) {
       $links =
         <ul class="nav navbar-nav">
@@ -56,16 +56,16 @@ class :bootstrap:navbar extends :bootstrap:base {
     return
       <bootstrap:navbar>
         <bootstrap:navbar:brand href="#">Brand</bootstrap:navbar:brand>
-        <bootstrap:navbar:link href="#">
+        <bootstrap:navigation:link href="#">
           Link
-        </bootstrap:navbar:link>
-        <bootstrap:navbar:link href="#" active="true">
+        </bootstrap:navigation:link>
+        <bootstrap:navigation:link href="#" active="true">
           Active Link
-        </bootstrap:navbar:link>
-        <bootstrap:navbar:link href="#">
+        </bootstrap:navigation:link>
+        <bootstrap:navigation:link href="#">
           Another Link
-        </bootstrap:navbar:link>
-        <bootstrap:navbar:dropdown>
+        </bootstrap:navigation:link>
+        <bootstrap:navigation:dropdown>
           <a href="#">
             Dropdown
             <bootstrap:caret />
@@ -85,7 +85,7 @@ class :bootstrap:navbar extends :bootstrap:base {
               Derp
             </bootstrap:dropdown:item>
           </bootstrap:dropdown:menu>
-        </bootstrap:navbar:dropdown>
+        </bootstrap:navigation:dropdown>
       </bootstrap:navbar>;
   }
 
@@ -94,15 +94,15 @@ class :bootstrap:navbar extends :bootstrap:base {
     return
       <bootstrap:navbar theme="inverse">
         <bootstrap:navbar:brand href="#">Brand</bootstrap:navbar:brand>
-        <bootstrap:navbar:link href="#">
+        <bootstrap:navigation:link href="#">
           Link
-        </bootstrap:navbar:link>
-        <bootstrap:navbar:link href="#" active="true">
+        </bootstrap:navigation:link>
+        <bootstrap:navigation:link href="#" active="true">
           Active Link
-        </bootstrap:navbar:link>
-        <bootstrap:navbar:link href="#">
+        </bootstrap:navigation:link>
+        <bootstrap:navigation:link href="#">
           Another Link
-        </bootstrap:navbar:link>
+        </bootstrap:navigation:link>
       </bootstrap:navbar>;
   }
 }
