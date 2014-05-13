@@ -1,12 +1,12 @@
 <?hh
 
 <<ExamplesInClass(':bootstrap:navbar')>>
-final class :bootstrap:navbar:dropdown extends :bootstrap:base {
+final class :bootstrap:navigation:dropdown extends :bootstrap:base {
   children (
     :a,
     :bootstrap:dropdown:menu
   );
-  category %bootstrap:navbar:item;
+  category %bootstrap:navigation:item;
 
   protected function render(): :xhp {
     list($trigger, $menu) = $this->getChildren();
