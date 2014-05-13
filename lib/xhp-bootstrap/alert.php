@@ -10,6 +10,8 @@ final class :bootstrap:alert extends :bootstrap:base {
     } use = 'warning',
     :bootstrap:base;
 
+  category %bootstrap:grid:cellcontent;
+
   protected function render(): :xhp {
     foreach($this->getChildren('a') as $child) {
       $child->addClass('alert-link');

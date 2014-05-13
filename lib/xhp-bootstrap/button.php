@@ -23,6 +23,8 @@ class :bootstrap:button extends :bootstrap:base {
     Stringish href,
     :bootstrap:base;
 
+  category %bootstrap:grid:cellcontent;
+
   protected function render(): :xhp {
     $ret =
       <a href={$this->getAttribute('href')}>
