@@ -1,16 +1,16 @@
 <?hh
 
 final class :bootstrap:table extends :bootstrap:base {
+
   attribute
+    :table;
     bool striped = false,
     bool border = false,
     bool hover-rows = false,
     bool condensed = false,
-    bool responsive = false,
-    :table,
-    :bootstrap:base;
+    bool responsive = false;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $table = <table>{$this->getChildren()}</table>;
     $this->transferAttributesExcept(
       $table,

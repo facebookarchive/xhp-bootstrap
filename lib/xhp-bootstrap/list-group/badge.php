@@ -1,9 +1,10 @@
 <?hh
 
 final class :bootstrap:badge extends :bootstrap:base {
-  attribute :bootstrap:base;
 
-  protected function render(): :xhp {
+  attribute :span;
+
+  protected function compose(): :xhp {
     $ret = <span>{$this->getChildren()}</span>;
     $ret->addClass($this->getAttribute('class'));
     $ret->addClass('badge');

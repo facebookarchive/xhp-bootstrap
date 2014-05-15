@@ -2,12 +2,12 @@
 
 <<ExamplesInClass(':bootstrap:navbar')>>
 class :bootstrap:navbar:brand extends :bootstrap:base {
-  attribute
-    Stringish href @required,
-    :a,
-    :bootstrap:base;
 
-  protected function render(): :xhp {
+  attribute
+    :a,
+    Stringish href @required;
+
+  protected function compose(): :xhp {
     return
       <a href={$this->getAttribute('href')} class="navbar-brand">
         {$this->getChildren()}

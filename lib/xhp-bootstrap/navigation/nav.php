@@ -1,7 +1,9 @@
 <?hh
 
 final class :bootstrap:nav extends :bootstrap:base {
+
   attribute
+    :ul,
     enum {
       'tabs',
       'pills'
@@ -10,8 +12,7 @@ final class :bootstrap:nav extends :bootstrap:base {
       'base',
       'justified',
       'stacked'
-    } layout = 'base',
-    :bootstrap:base;
+    } layout = 'base';
 
   children (%bootstrap:navigation:item*);
 

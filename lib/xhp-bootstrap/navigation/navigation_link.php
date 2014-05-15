@@ -2,16 +2,17 @@
 
 <<ExamplesInClass(':bootstrap:navbar')>>
 class :bootstrap:navigation:link extends :bootstrap:base {
+
   attribute
-    bool active = false,
+    :li,
     Stringish href @required,
-    :bootstrap:base;
+    bool active = false;
 
   children (pcdata);
 
   category %bootstrap:navigation:item;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     return
       <li class={$this->getAttribute('active') ? 'active' : null}>
         <a href={$this->getAttribute('href')}>

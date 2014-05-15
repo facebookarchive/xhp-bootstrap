@@ -2,12 +2,11 @@
 
 final class :bootstrap:list-group extends :bootstrap:base {
 
-  attribute
-    :bootstrap:base;
+  attribute :div;
 
   children (:bootstrap:list-group-item+);
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret = <div>{$this->getChildren()}</div>;
     $ret->addClass('list-group');
     return $ret;

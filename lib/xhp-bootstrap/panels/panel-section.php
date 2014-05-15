@@ -2,12 +2,12 @@
 
 <<ExamplesInClass(':bootstrap:panel')>>
 abstract class :bootstrap:panel:section extends :bootstrap:base {
-  attribute
-    :bootstrap:base;
+
+  attribute :div;
 
   abstract protected function getSectionStyle(): string;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret =
       <div class={$this->getSectionStyle()}>
         {$this->getChildren()}

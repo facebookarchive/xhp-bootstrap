@@ -1,9 +1,10 @@
 <?hh
 
 class :bootstrap:container extends :bootstrap:base {
-  attribute :div, :bootstrap:base;
+  
+  attribute :div;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $class = $this->getAttribute('class');
     if ($class) {
       $this->addClass($class);

@@ -3,6 +3,7 @@
 final class :bootstrap:button-group extends :bootstrap:base {
 
   attribute
+    :div,
     enum {
       'horizontal',
       'vertical'
@@ -13,12 +14,11 @@ final class :bootstrap:button-group extends :bootstrap:base {
       'small',
       'x-small'
     } size = 'default',
-    bool justified = false,
-    :bootstrap:base;
+    bool justified = false;
 
   children ((:bootstrap:button|:bootstrap:button-group)+);
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $class = $this->getAttribute('orientation') === 'horizontal'
       ? 'btn-group' : 'btn-group-vertical';
     $ret = <div class={$class}>{$this->getChildren()}</div>;

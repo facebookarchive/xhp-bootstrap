@@ -2,7 +2,9 @@
 
 <<ExamplesInClass(':bootstrap:list-group')>>
 final class :bootstrap:list-group-item extends :bootstrap:base {
+
   attribute
+    :a,
     enum {
       'success',
       'info',
@@ -10,11 +12,9 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
       'danger',
       'none'
     } use,
-    bool active = false,
-    :bootstrap:base,
-    :a;
+    bool active = false;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret = <a>{$this->getChildren()}</a>;
     $this->transferAttributesExcept($ret, Set {'active', 'use'});
     if ($this->getAttribute('active')) {

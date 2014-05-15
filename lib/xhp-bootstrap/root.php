@@ -1,7 +1,8 @@
 <?hh
 
 class :bootstrap:root extends :bootstrap:base {
-  attribute :bootstrap:base;
+
+  attribute :div;
 
   children (
     :bootstrap:navbar?,
@@ -9,7 +10,7 @@ class :bootstrap:root extends :bootstrap:base {
     :bootstrap:footer?
   );
 
-  protected function render() {
+  protected function compose() {
     return <div id="wrap">{$this->getChildren()}</div>;
   }
 }

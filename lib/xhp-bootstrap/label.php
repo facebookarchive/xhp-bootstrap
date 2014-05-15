@@ -1,7 +1,9 @@
 <?hh
 
 final class :bootstrap:label extends :bootstrap:base {
+  
   attribute
+    :span,
     enum {
         'default',
         'primary',
@@ -9,10 +11,9 @@ final class :bootstrap:label extends :bootstrap:base {
         'info',
         'warning',
         'danger'
-    } use = 'default',
-    :bootstrap:base;
+    } use = 'default';
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret =
       <span class={$this->getAttribute('class')}>
         {$this->getChildren()}

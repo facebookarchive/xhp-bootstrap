@@ -1,7 +1,9 @@
 <?hh
 
 class :bootstrap:panel extends :bootstrap:base {
+
   attribute
+    :div,
     enum {
       'default',
       'primary',
@@ -9,17 +11,15 @@ class :bootstrap:panel extends :bootstrap:base {
       'info',
       'warning',
       'danger'
-    } use = 'default',
-    :bootstrap:base;
+    } use = 'default';
 
   children (
     :bootstrap:panel:heading?,
     :bootstrap:panel:body?,
     :bootstrap:panel:footer?,
-    :ui:base*
   );
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret =
       <div class={$this->getAttribute('class')}>
         {$this->getChildren()}

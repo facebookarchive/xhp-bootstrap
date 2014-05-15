@@ -1,11 +1,12 @@
 <?hh
 
 final class :bootstrap:jumbotron extends :bootstrap:base {
+  
   attribute
-    string title,
-    :bootstrap:base;
+    :div,
+    string title;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $title = $this->getAttribute('title');
     if ($title) {
       $title = <h1>{$title}</h1>;

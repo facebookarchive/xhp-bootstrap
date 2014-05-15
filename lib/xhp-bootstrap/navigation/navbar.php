@@ -1,22 +1,23 @@
 <?hh
 
 class :bootstrap:navbar extends :bootstrap:base {
+
   attribute
+    :nav,
     enum { 'default', 'inverse' } theme = 'default',
     enum {
       'default',
       'fixed-top',
       'static-top',
       'fixed-bottom'
-    } position = 'default',
-    :bootstrap:base;
+    } position = 'default';
 
   children (
     :bootstrap:navbar:brand?,
     %bootstrap:navigation:item*
   );
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $theme = $this->getAttribute('theme');
     $position = $this->getAttribute('position');
 
