@@ -1,7 +1,10 @@
 <?hh
 
-final class :bootstrap:caret extends :x:element {
-  protected function render(): :xhp {
+final class :bootstrap:caret extends :bootstrap:base {
+
+  attribute :span;
+
+  protected function compose(): :xhp {
     return <span class="caret" />;
   }
 

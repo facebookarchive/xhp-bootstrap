@@ -1,7 +1,9 @@
 <?hh
 
 class :bootstrap:button extends :bootstrap:base {
+
   attribute
+    :a,
     enum {
       'default',
       'primary',
@@ -20,19 +22,13 @@ class :bootstrap:button extends :bootstrap:base {
     bool block = false,
     bool active = false,
     bool disabled = false,
-    Stringish href,
-    :bootstrap:base;
+    Stringish href;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret =
       <a href={$this->getAttribute('href')}>
         {$this->getChildren()}
       </a>;
-    $this->transferAttributes(
-      $ret,
-      Vector { 'class', 'href' }
-    );
-    $this->transferSpecialAttributes($ret);
 
     $ret->addClass('btn');
     $ret->addClass('btn-'.$this->getAttribute('use'));

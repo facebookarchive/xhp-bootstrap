@@ -1,12 +1,13 @@
 <?hh
 
 class :bootstrap:page-header extends :bootstrap:base {
+  
   attribute
+    :div,
     string title @required,
-    string subtext,
-    :bootstrap:base;
+    string subtext;
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $subtext = $this->getAttribute('subtext');
     if ($subtext !== null) {
       $subtext =

@@ -1,16 +1,17 @@
 <?hh
 
 final class :bootstrap:alert extends :bootstrap:base {
+  
   attribute
+    :div,
     enum {
       'success',
       'info',
       'warning',
       'danger'
-    } use = 'warning',
-    :bootstrap:base;
+    } use = 'warning';
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     foreach($this->getChildren('a') as $child) {
       $child->addClass('alert-link');
     }

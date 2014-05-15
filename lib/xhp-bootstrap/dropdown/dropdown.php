@@ -1,12 +1,15 @@
 <?hh
 
 final class :bootstrap:dropdown extends :bootstrap:base {
+
+  attribute :div;
+
   children (
     :bootstrap:button,
     :bootstrap:dropdown:menu
   );
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     list($trigger, $menu) = $this->getChildren();
     $trigger->addClass('dropdown-toggle');
     $trigger->setAttribute('data-toggle', 'dropdown');
