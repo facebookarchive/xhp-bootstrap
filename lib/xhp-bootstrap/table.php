@@ -3,7 +3,7 @@
 final class :bootstrap:table extends :bootstrap:base {
 
   attribute
-    :table;
+    :table,
     bool striped = false,
     bool border = false,
     bool hover-rows = false,
@@ -12,10 +12,6 @@ final class :bootstrap:table extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $table = <table>{$this->getChildren()}</table>;
-    $this->transferAttributesExcept(
-      $table,
-      Set { 'striped', 'border', 'hover-rows', 'condensed', 'responsive' }
-    );
     $table->addClass('table');
     if ($this->getAttribute('striped')) {
       $table->addClass('table-striped');

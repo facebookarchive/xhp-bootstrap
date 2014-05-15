@@ -3,7 +3,7 @@
 abstract class :bootstrap:base extends :x:element {
 
   private bool $_rendered = false;
-  private static Set $_specialAttributes = {'data', 'aria'};
+  private static $_specialAttributes = Set {'data', 'aria'};
 
   abstract protected function compose(): ?:xhp;
 
@@ -81,7 +81,7 @@ abstract class :bootstrap:base extends :x:element {
     // sparker: Is $target::__xhpAttributeDeclaration() valid in Hack?
     $validTargetAttributes = $target->__xhpAttributeDeclaration();
     if (:xhp::$ENABLE_VALIDATION) {
-      static int $htmlAttributeCount = 0;
+      static $htmlAttributeCount = 0;
       if ($htmlAttributeCount == 0) {
         $htmlAttributeCount = count(
           :xhp:html-element::__xhpAttributeDeclaration()

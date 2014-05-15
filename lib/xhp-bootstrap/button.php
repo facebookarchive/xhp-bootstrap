@@ -29,11 +29,6 @@ class :bootstrap:button extends :bootstrap:base {
       <a href={$this->getAttribute('href')}>
         {$this->getChildren()}
       </a>;
-    $this->transferAttributes(
-      $ret,
-      Vector { 'class', 'href' }
-    );
-    $this->transferSpecialAttributes($ret);
 
     $ret->addClass('btn');
     $ret->addClass('btn-'.$this->getAttribute('use'));

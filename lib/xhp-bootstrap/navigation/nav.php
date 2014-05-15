@@ -16,7 +16,7 @@ final class :bootstrap:nav extends :bootstrap:base {
 
   children (%bootstrap:navigation:item*);
 
-  protected function render(): :xhp {
+  protected function compose(): :xhp {
     $ret =
       <ul class="nav">
         {$this->getChildren()}

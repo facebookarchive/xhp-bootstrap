@@ -14,7 +14,6 @@ final class :bootstrap:dropdown:item extends :bootstrap:base {
       <a role="menuitem" tabindex="-1">
         {$this->getChildren()}
       </a>;
-    $this->transferCustomAttributesExcept($link, Set {'disabled'});
 
     $ret = <li role="presentation">{$link}</li>;
     if ($this->getAttribute('disabled')) {

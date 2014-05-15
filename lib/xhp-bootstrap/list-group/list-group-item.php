@@ -16,7 +16,6 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $ret = <a>{$this->getChildren()}</a>;
-    $this->transferAttributesExcept($ret, Set {'active', 'use'});
     if ($this->getAttribute('active')) {
       $ret->addClass('active');
     }
