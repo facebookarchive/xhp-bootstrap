@@ -3,8 +3,7 @@
 abstract class :bootstrap:base extends :x:element {
 
   private bool $_rendered = false;
-  private static Vector<string, bool> $_specialAttributes =
-    Vector<string, bool> {'data' => true, 'aria' => true};
+  private static Set $_specialAttributes = {'data', 'aria'};
 
   abstract protected function compose(): ?:xhp;
 
