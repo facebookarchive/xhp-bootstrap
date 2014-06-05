@@ -16,7 +16,7 @@ class :bootstrap:panel extends :bootstrap:base {
   children (
     :bootstrap:panel:heading?,
     :bootstrap:panel:body?,
-    :bootstrap:panel:footer?,
+    :bootstrap:panel:footer?
   );
 
   protected function compose(): :xhp {
