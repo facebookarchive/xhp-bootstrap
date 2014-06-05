@@ -5,7 +5,6 @@
  * stable release. This is a temporary kludge. */
 
 class TerribleAutoloader {
-  const T_XHP_LABEL = 382;
   private static function classesInFile($file) {
     $contents = file_get_contents($file);
     $tokens = token_get_all($contents);
@@ -23,7 +22,8 @@ class TerribleAutoloader {
         if ($type === T_WHITESPACE) {
           continue;
         }
-        if ($type === self::T_XHP_LABEL) {
+        if ($type === T_XHP_LABEL) {
+          $value = substr($value, 1);
           // Mangle...
           $classes[] = 'xhp_'.str_replace([':', '-'], ['__', '_'], $value);
         } else if ($type === T_STRING) {
