@@ -29,17 +29,12 @@ print
         <!-- Latest compiled and minified CSS -->
         <link
           rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
-        />
-        <!-- Optional theme -->
-        <link
-          rel="stylesheet"
-          href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"
+          href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
         />
         <!-- Bootstrap JS requires JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" />
         <!-- Latest compiled and minified JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" />
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" />
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js" />
         <link rel="stylesheet" href="./styles.css" />
       </head>
