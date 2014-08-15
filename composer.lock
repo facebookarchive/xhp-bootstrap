@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "e66f3568f7b94b123cdbf323da908f54",
+    "hash": "9211da7dd730604278642ab8d0e8135a",
     "packages": [
         {
             "name": "facebook/xhp",
@@ -11,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/rdewilde/xhp.git",
-                "reference": "9ecebc3c27abb66de256e2b3accddb8d9b1ac434"
+                "reference": "19702d67471bb75932da7f1df9f02b5db895d236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rdewilde/xhp/zipball/9ecebc3c27abb66de256e2b3accddb8d9b1ac434",
-                "reference": "9ecebc3c27abb66de256e2b3accddb8d9b1ac434",
+                "url": "https://api.github.com/repos/rdewilde/xhp/zipball/19702d67471bb75932da7f1df9f02b5db895d236",
+                "reference": "19702d67471bb75932da7f1df9f02b5db895d236",
                 "shasum": ""
             },
             "type": "library",
@@ -27,23 +28,16 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "XHP is a PHP extension which augments the syntax of the language such that XML document fragments become valid PHP expressions.",
-            "time": "2014-05-03 19:32:42"
+            "time": "2014-05-26 19:45:22"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "facebook/xhp": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
 }

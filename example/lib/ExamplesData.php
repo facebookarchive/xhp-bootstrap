@@ -2,9 +2,9 @@
 
 class ExamplesData {
   public static function GetBootstrapClasses(): Vector<string> {
-    $all_classes = Vector::fromArray(
-      array_keys(TerribleAutoloader::GetClassMap()
-    ));
+    $classmap = 
+      require(__DIR__ . '/../../vendor/composer/autoload_classmap.php');
+    $all_classes = new Vector(array_keys($classmap));
     return $all_classes->filter(
       $x ==>
         strpos($x, 'xhp_bootstrap__') === 0
