@@ -2,6 +2,7 @@
 
 final class :bootstrap:glyphicon extends :bootstrap:base {
   attribute
+    :span,
     enum {
       'asterisk',
       'plus',

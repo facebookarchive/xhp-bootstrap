@@ -4,5 +4,9 @@
 	
   "require": {
     "facebook/xhp": "dev-master"
+  },
+ 
+  "autoload": {
+    "classmap": ["lib/"]
   }
 }

@@ -1,7 +1,8 @@
 <?hh
 
-require_once('lib/TerribleAutoloader.php');
-TerribleAutoloader::Init();
+require_once('../vendor/autoload.php');
+
+require_once(__DIR__ . '/lib/init.php');
 
 $bootstrap_classes = ExamplesData::GetBootstrapClasses();
 $class = array_key_exists('classname', $_GET)
