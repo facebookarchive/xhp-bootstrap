@@ -2,7 +2,8 @@
 
 final class :xhp-explorer:attributes extends :x:element {
   attribute
-    string classname @required;
+    string classname @required,
+    string title = 'Attributes';
 
   protected function render() {
     $rows = Vector { };
@@ -74,18 +75,28 @@ final class :xhp-explorer:attributes extends :x:element {
           <td>{$default}</td>
         </tr>;
     }
+    if (!$rows->count()) {
+      return <x:frag />;
+    }
+    $title = $this->getAttribute('title');
+    if ($title) {
+      $title = <h2>{$title}</h2>;
+    }
     return
-      <bootstrap:table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          {$rows}
-        </tbody>
-      </bootstrap:table>;
+      <x:frag>
+        {$title}
+        <bootstrap:table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            {$rows}
+          </tbody>
+        </bootstrap:table>
+      </x:frag>;
   }
 }

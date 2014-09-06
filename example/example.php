@@ -49,7 +49,8 @@ print
           <bootstrap:container>
             <bootstrap:page-header title={prettify_class($class)} />
             <bootstrap:container class="col-xs-12 col-sm-9">
-              <h2>Attributes</h2>
+              <xhp-explorer:category classname={$class} />
+              <xhp-explorer:children classname={$class} />
               <xhp-explorer:attributes classname={$class} />
               <h2>Examples</h2>
               {$examples->map($x ==> <xhp-explorer:example example={$x} />)}
