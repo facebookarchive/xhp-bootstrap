@@ -15,4 +15,13 @@ class :bootstrap:container extends :bootstrap:base {
         {$this->getChildren()}
       </div>;
   }
+
+  <<ExampleTitle('Uses')>>
+  public static function __example1() {
+    return
+      <bootstrap:container>
+        Content
+      </bootstrap:container>;
+  }
+
 }

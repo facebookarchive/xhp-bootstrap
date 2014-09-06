@@ -213,10 +213,30 @@ final class :bootstrap:glyphicon extends :bootstrap:base {
     
     return <span/>;
   }
-  
+
   <<ExampleTitle('Glyphicon OK')>>
   public static function __example1(): :xhp {
     return
       <bootstrap:glyphicon icon="ok" />;
+  }
+
+  <<ExampleTitle('All Glyphicons')>>
+  public static function __example2(): :xhp {
+    $glyphs = array();
+    // Shhh, __xhpAttributeDeclaration() is an internal API
+    // you probably shouldn't depend on it.
+    foreach (self::__xhpAttributeDeclaration()['icon'][1] as $name) {
+      $glyphs[] =
+        <tr>
+          <td>{$name}</td>
+          <td><bootstrap:glyphicon icon={$name} /></td>
+        </tr>;
+    }
+    return
+      <bootstrap:table>
+        <tbody>
+          {$glyphs}
+        </tbody>
+      </bootstrap:table>;
   }
 }
