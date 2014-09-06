@@ -13,6 +13,7 @@ final class :xhp-explorer:children extends :x:element {
       case 2: return <x:frag>pcdata</x:frag>;
       case 3:
         if (!strncmp('xhp_bootstrap__', $decl, 15)) {
+          $name = substr($name, 4);
           return <a href={"?classname={$decl}"}>{$name}</a>;
         } else {
           return <x:frag>{$name}</x:frag>;
