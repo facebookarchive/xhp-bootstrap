@@ -5,39 +5,84 @@ Overview
 --------
 
 The [Bootstrap](http://getbootstrap.com) project is a popular HTML, CSS, and
-JS framework providing common components for web pages. This project provides
+JS framework providing common components for web pages. This project provides 
 XHP classes for these components.
 
 Getting Started
 ---------------
 
-Take a look at the reference documentation, and at the source of
-example/example.php.
+#### Step 1: Include Bootstrap Prerequisites
 
-Sorry, we're aware that we need more documentation here. If you like writing,
-we'd love a pull request!
+Bootstrap's JavaScript components require [jQuery](http://jquery.com/download
+/) to be included, so either grab the [downloadable version](http://jquery.co
+m/download/) and reference it, or [use a CDN](http://jquery.com/download/#usi
+ng-jquery-with-a-cdn) and include it in the head of your XHP document:
 
-Examples/Reference Documentation
---------------------------------
+````
+<head>
+  ...
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  ...
+</head>
+````
 
-All the classes have static example functions; you can interact with these
-by configuring a webserver to look inside the example/ directory and accessing
-example.php.
+#### Step 2: Include Bootstrap Source
 
-You can also browse this at http://bootstrap.hhvm.com
+Grab the latest [Bootstrap package](http://getbootstrap.com/getting-started/#
+download) and reference it, or use their [CDN links](http://getbootstrap.com/
+getting-started/#download) and include them in the head of your XHP document:
+
+````
+<head>
+  ...
+  <!-- Latest compiled and minified CSS -->
+  <link 
+    rel="stylesheet" 
+    href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  />
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script 
+    src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" 
+  />
+  ...
+</head>
+````
+
+#### Step 3: Enable Composer Autoloading
+
+If you haven't already, include the following in your XHP to enable 
+[autoloading from Composer](https://getcomposer.org/doc/01-basic-usage.
+md#autoloading):
+
+````
+  require_once('vendor/autoload.php');
+````
+
+Once you've done this you are ready to start using [any of the XHP-Bootstrap 
+classes](http://bootstrap.hhvm.com) in your project. 
+
+Class References and Examples
+----------------
+
+You can also browse the list of available XHP-Bootstrap classes with live 
+examples at http://bootstrap.hhvm.com
+
+You can also interact with these by configuring a webserver to look inside 
+the `example/` directory and accessing `example.php`.
 
 Requirements
 ------------
 
-- HHVM with hhvm.enable\_xhp=1 set in the ini file (or Eval.EnableXHP=1 in the
-  HDF file)
-- Composer
+- [HHVM](http://hhvm.com/) with `hhvm.enable\_xhp=1` set in the ini file 
+(or `Eval.EnableXHP=1` in the HDF file)
+- [Composer](https://getcomposer.org/)
 
 Differences
 -----------
 
-In the bootstrap documentation, a component's
+In the Bootstrap documentation, a component's
 default/primary/success/info/warning/danger/link state
-(white/dark blue/green/light blue/orange/red/link) is referred to as 'use' for
-some components, but 'color' for others. XHP-Bootstrap uses the 'use' attribute
+(white/dark blue/green/light blue/orange/red/link) is referred to as `use` for
+some components, but `color` for others. XHP-Bootstrap uses the `use` attribute
 throughout for consistency.
