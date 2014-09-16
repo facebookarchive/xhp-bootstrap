@@ -74,7 +74,7 @@ the `example/` directory and accessing `example.php`.
 Requirements
 ------------
 
-- [HHVM](http://hhvm.com/) with `hhvm.enable\_xhp=1` set in the ini file 
+- [HHVM](http://hhvm.com/) with `hhvm.enable_xhp=1` set in the ini file 
 (or `Eval.EnableXHP=1` in the HDF file)
 - [Composer](https://getcomposer.org/)
 
