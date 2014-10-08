@@ -5,7 +5,7 @@ Overview
 --------
 
 The [Bootstrap](http://getbootstrap.com) project is a popular HTML, CSS, and
-JS framework providing common components for web pages. This project provides 
+JS framework providing common components for web pages. This project provides
 XHP classes for these components.
 
 Getting Started
@@ -36,14 +36,14 @@ getting-started/#download) and include them in the head of your XHP document:
 <head>
   ...
   <!-- Latest compiled and minified CSS -->
-  <link 
-    rel="stylesheet" 
+  <link
+    rel="stylesheet"
     href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
   />
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
-  <script 
-    src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" 
+  <script
+    src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"
   />
   ...
 </head>
@@ -51,7 +51,7 @@ getting-started/#download) and include them in the head of your XHP document:
 
 #### Step 3: Enable Composer Autoloading
 
-If you haven't already, include the following in your XHP to enable 
+If you haven't already, include the following in your XHP to enable
 [autoloading from Composer](https://getcomposer.org/doc/01-basic-usage.
 md#autoloading):
 
@@ -59,22 +59,22 @@ md#autoloading):
   require_once('vendor/autoload.php');
 ````
 
-Once you've done this you are ready to start using [any of the XHP-Bootstrap 
-classes](http://bootstrap.hhvm.com) in your project. 
+Once you've done this you are ready to start using [any of the XHP-Bootstrap
+classes](http://bootstrap.hhvm.com) in your project.
 
 Class References and Examples
-----------------
+-----------------------------
 
-You can also browse the list of available XHP-Bootstrap classes with live 
+You can also browse the list of available XHP-Bootstrap classes with live
 examples at http://bootstrap.hhvm.com
 
-You can also interact with these by configuring a webserver to look inside 
+You can also interact with these by configuring a webserver to look inside
 the `example/` directory and accessing `example.php`.
 
 Requirements
 ------------
 
-- [HHVM](http://hhvm.com/) with `hhvm.enable_xhp=1` set in the ini file 
+- [HHVM](http://hhvm.com/) with `hhvm.enable_xhp=1` set in the ini file
 (or `Eval.EnableXHP=1` in the HDF file)
 - [Composer](https://getcomposer.org/)
 
@@ -86,3 +86,13 @@ default/primary/success/info/warning/danger/link state
 (white/dark blue/green/light blue/orange/red/link) is referred to as `use` for
 some components, but `color` for others. XHP-Bootstrap uses the `use` attribute
 throughout for consistency.
+
+License
+-------
+
+XHP-Bootstrap is BSD-licensed. We also provide an additional patent grant.
+
+Contributing
+------------
+
+Please see CONTRIBUTING.md
