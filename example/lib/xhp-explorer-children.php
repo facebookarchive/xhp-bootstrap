@@ -49,7 +49,7 @@ final class :xhp-explorer:children extends :x:element {
       case 0: case 1: case 2: case 3:
         return
           <x:frag>
-            {self::parseRule($c[1], $c[2])}{$symbols[$c[0]]}
+            {$this->parseRule($c[1], $c[2])}{$symbols[$c[0]]}
           </x:frag>;
       case 4: case 5:
         return

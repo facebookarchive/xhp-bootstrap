@@ -35,7 +35,7 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     $max = $this->getAttribute('max');
     if (($min >= $max) || ($val >= $max)) {
       $width = 100;
-    } else if ($val < $mix) {
+    } else if ($val < $max) {
       $width = 0;
     } else {
       $width = 100 * ($val - $min) / ($max - $min);
@@ -54,7 +54,7 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     switch ($this->getAttribute('stripes')) {
       case 'active':
         $ret->addClass('active');
-        // fallthrough
+        // FALLTHROUGH
       case 'on':
         $ret->addClass('progress-bar-striped');
     }

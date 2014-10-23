@@ -57,7 +57,7 @@ final class :xhp-explorer:example extends :x:element {
       </div>;
   }
 
-  private function getTitle(): XhpChild {
+  private function getTitle(): XHPChild {
     $example = $this->getAttribute('example');
     $title = $example->getAttribute('ExampleTitle');
     return $title === null ? $example->getName() : $title;
