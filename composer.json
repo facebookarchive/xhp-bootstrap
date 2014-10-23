@@ -1,11 +1,9 @@
 {
   "name": "hhvm/xhp-bootstrap",
   "description": "Twitter Bootstrap using XHP",
-	
   "require": {
     "facebook/xhp": "dev-master"
   },
- 
   "autoload": {
     "classmap": ["lib/"]
   }

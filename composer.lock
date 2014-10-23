@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9211da7dd730604278642ab8d0e8135a",
+    "hash": "074b774686063fe4e7ef38ce2e79ef9f",
     "packages": [
         {
             "name": "facebook/xhp",
