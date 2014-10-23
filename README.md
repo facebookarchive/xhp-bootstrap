@@ -8,6 +8,13 @@ The [Bootstrap](http://getbootstrap.com) project is a popular HTML, CSS, and
 JS framework providing common components for web pages. This project provides
 XHP classes for these components.
 
+Requirements
+------------
+
+- [HHVM](http://hhvm.com/) with `hhvm.enable_xhp=1` set in the ini file
+(or `Eval.EnableXHP=1` in the HDF file)
+- [Composer](https://getcomposer.org/)
+
 Getting Started
 ---------------
 
@@ -70,13 +77,6 @@ examples at http://bootstrap.hhvm.com
 
 You can also interact with these by configuring a webserver to look inside
 the `example/` directory and accessing `example.php`.
-
-Requirements
-------------
-
-- [HHVM](http://hhvm.com/) with `hhvm.enable_xhp=1` set in the ini file
-(or `Eval.EnableXHP=1` in the HDF file)
-- [Composer](https://getcomposer.org/)
 
 Differences
 -----------

@@ -49,7 +49,7 @@ function render_page(?string $class = null): void {
         <bootstrap:button
           use="primary"
           href="https://github.com/hhvm/xhp-bootstrap/blob/master/README.md">
-          README/Getting Started
+          Read More
         </bootstrap:button>
       </bootstrap:jumbotron>;
   }
