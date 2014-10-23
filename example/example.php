@@ -52,7 +52,12 @@ print
         <bootstrap:root>
           <bootstrap:navbar position="static-top" theme="inverse">
             <bootstrap:navbar:brand href="#">
-              XHP Bootstrap
+              <img
+                src="xhpbootstrap_logo_notext.png"
+                alt="XHP-Bootstrap"
+                style="height: 100%;"
+              />
+              XHP-Bootstrap
             </bootstrap:navbar:brand>
           </bootstrap:navbar>
           <bootstrap:container>
