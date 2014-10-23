@@ -102,7 +102,7 @@ function render_page(?string $class = null): void {
                         {prettify_class($class_name)}
                       </bootstrap:list-group-item>
                   )}
-                </bootstrap:list-group>;
+                </bootstrap:list-group>
               </bootstrap:container>
             </bootstrap:container>
           </bootstrap:root>
