@@ -62,8 +62,7 @@ them in the head of your XHP document:
 #### Step 3: Enable Composer Autoloading
 
 If you haven't already, include the following in your XHP to enable
-[autoloading from Composer](https://getcomposer.org/doc/01-basic-usage.
-md#autoloading):
+[autoloading from Composer](https://getcomposer.org/doc/01-basic-usage.md#autoloading):
 
 ````
   require_once('vendor/autoload.php');
