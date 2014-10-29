@@ -20,10 +20,11 @@ Getting Started
 
 #### Step 1: Include Bootstrap Prerequisites
 
-Bootstrap's JavaScript components require [jQuery](http://jquery.com/download
-/) to be included, so either grab the [downloadable version](http://jquery.co
-m/download/) and reference it, or [use a CDN](http://jquery.com/download/#usi
-ng-jquery-with-a-cdn) and include it in the head of your XHP document:
+Bootstrap's JavaScript components require
+[jQuery](http://jquery.com/download/) to be included, so either grab the
+[downloadable version](http://jquery.com/download/) and reference it, or
+[use a CDN](http://jquery.com/download/#using-jquery-with-a-cdn) and include it
+in the head of your XHP document:
 
 ````
 <head>
@@ -35,9 +36,11 @@ ng-jquery-with-a-cdn) and include it in the head of your XHP document:
 
 #### Step 2: Include Bootstrap Source
 
-Grab the latest [Bootstrap package](http://getbootstrap.com/getting-started/#
-download) and reference it, or use their [CDN links](http://getbootstrap.com/
-getting-started/#download) and include them in the head of your XHP document:
+Grab the latest
+[Bootstrap package](http://getbootstrap.com/getting-started/#download) and
+reference it, or use their
+[CDN links](http://getbootstrap.com/getting-started/#download) and include
+them in the head of your XHP document:
 
 ````
 <head>
