@@ -4,38 +4,49 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "074b774686063fe4e7ef38ce2e79ef9f",
+    "hash": "f39e3ce99f0f614c43ebe6e7e43ffbbc",
     "packages": [
         {
-            "name": "facebook/xhp",
+            "name": "facebook/xhp-lib",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/rdewilde/xhp.git",
-                "reference": "19702d67471bb75932da7f1df9f02b5db895d236"
+                "url": "https://github.com/facebook/xhp-lib.git",
+                "reference": "c232a2187c51ffb9d153186e7dfbebf4bd0a7c20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rdewilde/xhp/zipball/19702d67471bb75932da7f1df9f02b5db895d236",
-                "reference": "19702d67471bb75932da7f1df9f02b5db895d236",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/c232a2187c51ffb9d153186e7dfbebf4bd0a7c20",
+                "reference": "c232a2187c51ffb9d153186e7dfbebf4bd0a7c20",
                 "shasum": ""
             },
             "type": "library",
             "autoload": {
                 "classmap": [
-                    "php-lib/"
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "XHP is a PHP extension which augments the syntax of the language such that XML document fragments become valid PHP expressions.",
-            "time": "2014-05-26 19:45:22"
+            "license": [
+                "PHP-3.01",
+                "Zend-2.0"
+            ],
+            "description": "Class library for XHP",
+            "homepage": "https://github.com/facebook/xhp-lib",
+            "keywords": [
+                "facebook",
+                "hack",
+                "hhvm",
+                "xhp"
+            ],
+            "time": "2015-01-13 18:18:33"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "facebook/xhp": 20
+        "facebook/xhp-lib": 20
     },
     "prefer-stable": false,
     "platform": [],
