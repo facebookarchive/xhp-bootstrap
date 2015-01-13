@@ -59,9 +59,20 @@ them in the head of your XHP document:
 </head>
 ````
 
-#### Step 3: Enable Composer Autoloading
+#### Step 3: Add XHP-bootstrap dependency
 
-If you haven't already, include the following in your XHP to enable
+Add the following to your composer.json, then re-run composer:
+
+````
+  "minimum-stability": "dev",
+  "require": {
+    "hhvm/xhp-bootstrap": "dev-master"
+  }
+````
+
+#### Step 4: Enable Composer Autoloading
+
+If you haven't already, include the following in your PHP to enable
 [autoloading from Composer](https://getcomposer.org/doc/01-basic-usage.md#autoloading):
 
 ````
