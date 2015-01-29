@@ -27,8 +27,8 @@ class ExamplesData {
     }
 
     $rc = new ReflectionClass($class);
-    /* HH_FIXME[4053]: https://github.com/facebook/hhvm/issues/4049 */
-    if ((list($example_class) = $rc->getAttribute('ExamplesInClass'))) {
+    $example_class = $rc->getAttribute('ExamplesInClass');
+    if ($example_class !== null) {
       $mangled =
         'xhp_'.str_replace([':', '-'], ['__', '_'], substr($example_class, 1));
       $rc = new ReflectionClass($mangled);

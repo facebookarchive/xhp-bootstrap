@@ -25,9 +25,9 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
         'active'   // Striped and moving
     } stripes = 'off',
     bool active = false,
-    integer value @required,
-    integer min = 0,
-    integer max = 100;
+    int value @required,
+    int min = 0,
+    int max = 100;
 
   protected function compose(): :xhp {
     $val = $this->getAttribute('value');
