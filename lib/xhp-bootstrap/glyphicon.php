@@ -219,7 +219,7 @@ final class :bootstrap:glyphicon extends :bootstrap:base {
   protected function compose(): :xhp {
     $this->addClass('glyphicon');
     $this->addClass('glyphicon-'.$this->getAttribute('icon'));
-    
+
     return <span/>;
   }
 
@@ -233,7 +233,8 @@ final class :bootstrap:glyphicon extends :bootstrap:base {
   public static function __example2(): :xhp {
     $glyphs = array();
     // Shhh, __xhpAttributeDeclaration() is an internal API
-    // you probably shouldn't depend on it.
+    // you probably shouldn't depend on it. It's also non-static.
+    // UNSAFE
     foreach (self::__xhpAttributeDeclaration()['icon'][1] as $name) {
       $glyphs[] =
         <tr>
