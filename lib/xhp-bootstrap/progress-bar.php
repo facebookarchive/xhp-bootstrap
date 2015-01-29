@@ -30,9 +30,9 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     int max = 100;
 
   protected function compose(): :xhp {
-    $val = $this->getAttribute('value');
-    $min = $this->getAttribute('min');
-    $max = $this->getAttribute('max');
+    $val = $this->:value;
+    $min = $this->:min;
+    $max = $this->:max;
     if (($min >= $max) || ($val >= $max)) {
       $width = 100;
     } else if ($val < $max) {
@@ -42,7 +42,7 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     }
     $style = "width: {$width}%";
     $ret =
-      <div class={$this->getAttribute('class')} style={$style}
+      <div class={$this->:class} style={$style}
            role="progressbar"
            aria-valuenow={$val}
            aria-valuemin={$min}
@@ -50,8 +50,8 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
         {$this->getChildren()}
       </div>;
     $ret->addClass('progress-bar');
-    $ret->addClass('progress-bar-'.$this->getAttribute('use'));
-    switch ($this->getAttribute('stripes')) {
+    $ret->addClass('progress-bar-'.$this->:use);
+    switch ($this->:stripes) {
       case 'active':
         $ret->addClass('active');
         // FALLTHROUGH

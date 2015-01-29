@@ -31,9 +31,9 @@ final class :bootstrap:nav extends :bootstrap:base {
         {$this->getChildren()}
       </ul>;
 
-    $ret->addClass('nav-'.$this->getAttribute('navstyle'));
+    $ret->addClass('nav-'.$this->:navstyle);
 
-    $layout_class = $this->getAttribute('layout');
+    $layout_class = $this->:layout;
     if ($layout_class != 'base') {
       $ret->addClass('nav-'.$layout_class);
     }

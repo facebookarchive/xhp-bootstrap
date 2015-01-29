@@ -25,11 +25,11 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $ret = <a>{$this->getChildren()}</a>;
-    if ($this->getAttribute('active')) {
+    if ($this->:active) {
       $ret->addClass('active');
     }
     $ret->addClass('list-group-item');
-    switch ($this->getAttribute('use')) {
+    switch ($this->:use) {
       case 'success':
         $ret->addClass('list-group-item-success');
         break;

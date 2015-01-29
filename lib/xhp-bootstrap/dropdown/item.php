@@ -25,7 +25,7 @@ final class :bootstrap:dropdown:item extends :bootstrap:base {
       </a>;
 
     $ret = <li role="presentation">{$link}</li>;
-    if ($this->getAttribute('disabled')) {
+    if ($this->:disabled) {
       $ret->addClass('disabled');
     }
     return $ret;

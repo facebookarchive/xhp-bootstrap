@@ -20,7 +20,7 @@ class :bootstrap:container extends :bootstrap:base {
     }
     $this->addClass("container");
     return
-      <div class={$this->getAttribute('class')}>
+      <div class={$this->:class}>
         {$this->getChildren()}
       </div>;
   }

@@ -30,12 +30,12 @@ class :bootstrap:panel extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $ret =
-      <div class={$this->getAttribute('class')}>
+      <div class={$this->:class}>
         {$this->getChildren()}
       </div>;
 
     $ret->addClass('panel');
-    $ret->addClass('panel-'.$this->getAttribute('use'));
+    $ret->addClass('panel-'.$this->:use);
     return $ret;
   }
 

@@ -35,14 +35,14 @@ class :bootstrap:button extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $ret =
-      <a href={$this->getAttribute('href')}>
+      <a href={$this->:href}>
         {$this->getChildren()}
       </a>;
 
     $ret->addClass('btn');
-    $ret->addClass('btn-'.$this->getAttribute('use'));
+    $ret->addClass('btn-'.$this->:use);
 
-    switch ($this->getAttribute('size')) {
+    switch ($this->:size) {
       case 'large':
         $ret->addClass('btn-lg');
         break;
@@ -53,13 +53,13 @@ class :bootstrap:button extends :bootstrap:base {
         $ret->addClass('btn-xs');
         break;
     }
-    if ($this->getAttribute('block')) {
+    if ($this->:block) {
       $ret->addClass('btn-block');
     }
-    if ($this->getAttribute('active')) {
+    if ($this->:active) {
       $ret->addClass('active');
     }
-    if ($this->getAttribute('disabled')) {
+    if ($this->:disabled) {
       $ret->addClass('disabled');
     }
     return $ret;

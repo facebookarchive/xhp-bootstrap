@@ -17,7 +17,7 @@ class :bootstrap:page-header extends :bootstrap:base {
     string subtext;
 
   protected function compose(): :xhp {
-    $subtext = $this->getAttribute('subtext');
+    $subtext = $this->:subtext;
     if ($subtext !== null) {
       $subtext =
         <x:frag>
@@ -33,7 +33,7 @@ class :bootstrap:page-header extends :bootstrap:base {
 
     return
       <div class="page-header">
-        <h1>{$this->getAttribute('title')} {$subtext}</h1>
+        <h1>{$this->:title} {$subtext}</h1>
         {$lead}
       </div>;
   }

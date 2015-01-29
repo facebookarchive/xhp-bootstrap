@@ -23,8 +23,8 @@ class :bootstrap:navigation:link extends :bootstrap:base {
 
   protected function compose(): :xhp {
     return
-      <li class={$this->getAttribute('active') ? 'active' : null}>
-        <a href={$this->getAttribute('href')}>
+      <li class={$this->:active ? 'active' : null}>
+        <a href={$this->:href}>
           {$this->getChildren()}
         </a>
       </li>;

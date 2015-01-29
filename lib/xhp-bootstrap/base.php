@@ -144,14 +144,14 @@ abstract class :bootstrap:base extends :x:element {
   }
 
   public function requireUniqueID(): string {
-    if (!($id = $this->getAttribute('id'))) {
+    if (!($id = $this->:id)) {
       $this->setAttribute('id', $id = substr(md5(mt_rand(0, 100000)), 0, 10));
     }
     return $id;
   }
 
   public function addClass(string $class): this {
-    $this->setAttribute('class', trim($this->getAttribute('class').' '.$class));
+    $this->setAttribute('class', trim($this->:class.' '.$class));
     return $this;
   }
 

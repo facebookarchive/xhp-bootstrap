@@ -18,7 +18,7 @@ class :bootstrap:navbar:brand extends :bootstrap:base {
 
   protected function compose(): :xhp {
     return
-      <a href={$this->getAttribute('href')} class="navbar-brand">
+      <a href={$this->:href} class="navbar-brand">
         {$this->getChildren()}
       </a>;
   }

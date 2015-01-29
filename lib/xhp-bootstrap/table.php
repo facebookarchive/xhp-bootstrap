@@ -22,20 +22,20 @@ final class :bootstrap:table extends :bootstrap:base {
   protected function compose(): :xhp {
     $table = <table>{$this->getChildren()}</table>;
     $table->addClass('table');
-    if ($this->getAttribute('striped')) {
+    if ($this->:striped) {
       $table->addClass('table-striped');
     }
-    if ($this->getAttribute('border')) {
+    if ($this->:border) {
       $table->addClass('table-bordered');
     }
-    if ($this->getAttribute('hover-rows')) {
+    if ($this->:hover-rows) {
       $table->addClass('table-hover');
     }
-    if ($this->getAttribute('condensed')) {
+    if ($this->:condensed) {
       $table->addClass('table-condensed');
     }
 
-    if ($this->getAttribute('responsive')) {
+    if ($this->:responsive) {
       return <div class="table-responsive">{$table}</div>;
     }
     return $table;

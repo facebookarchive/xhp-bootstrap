@@ -27,8 +27,8 @@ class :bootstrap:navbar extends :bootstrap:base {
   );
 
   protected function compose(): :xhp {
-    $theme = $this->getAttribute('theme');
-    $position = $this->getAttribute('position');
+    $theme = $this->:theme;
+    $position = $this->:position;
 
     $header = $this->getChildren('bootstrap:navbar:brand');
     if ($header) {

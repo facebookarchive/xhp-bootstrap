@@ -218,7 +218,7 @@ final class :bootstrap:glyphicon extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $this->addClass('glyphicon');
-    $this->addClass('glyphicon-'.$this->getAttribute('icon'));
+    $this->addClass('glyphicon-'.$this->:icon);
 
     return <span/>;
   }

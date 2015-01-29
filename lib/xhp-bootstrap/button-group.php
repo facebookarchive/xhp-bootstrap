@@ -28,10 +28,10 @@ final class :bootstrap:button-group extends :bootstrap:base {
   children ((:bootstrap:button|:bootstrap:button-group)+);
 
   protected function compose(): :xhp {
-    $class = $this->getAttribute('orientation') === 'horizontal'
+    $class = $this->:orientation === 'horizontal'
       ? 'btn-group' : 'btn-group-vertical';
     $ret = <div class={$class}>{$this->getChildren()}</div>;
-    switch ($this->getAttribute('size')) {
+    switch ($this->:size) {
       case 'large':
         $ret->addClass('btn-group-lg');
         break;
@@ -42,7 +42,7 @@ final class :bootstrap:button-group extends :bootstrap:base {
         $ret->addClass('btn-group-xs');
         break;
     }
-    if ($this->getAttribute('justified')) {
+    if ($this->:justified) {
       $ret->addClass('btn-group-justified');
     }
 

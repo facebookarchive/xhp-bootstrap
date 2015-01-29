@@ -24,11 +24,11 @@ final class :bootstrap:label extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $ret =
-      <span class={$this->getAttribute('class')}>
+      <span class={$this->:class}>
         {$this->getChildren()}
       </span>;
     $ret->addClass('label');
-    $ret->addClass('label-'.$this->getAttribute('use'));
+    $ret->addClass('label-'.$this->:use);
     return $ret;
   }
 
