@@ -14,7 +14,7 @@ class :bootstrap:container extends :bootstrap:base {
   attribute :div;
 
   protected function compose(): :xhp {
-    $class = $this->getAttribute('class');
+    $class = (string) $this->:class;
     if ($class) {
       $this->addClass($class);
     }

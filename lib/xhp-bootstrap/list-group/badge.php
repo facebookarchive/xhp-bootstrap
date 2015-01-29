@@ -15,7 +15,10 @@ final class :bootstrap:badge extends :bootstrap:base {
 
   protected function compose(): :xhp {
     $ret = <span>{$this->getChildren()}</span>;
-    $ret->addClass($this->getAttribute('class'));
+    $class = (string) $this->:class;
+    if ($class) {
+      $ret->addClass($class);
+    }
     $ret->addClass('badge');
     return $ret;
   }

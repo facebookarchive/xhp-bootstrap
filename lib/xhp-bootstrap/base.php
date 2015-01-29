@@ -150,12 +150,12 @@ abstract class :bootstrap:base extends :x:element {
     return $id;
   }
 
-  public function addClass($class): this {
+  public function addClass(string $class): this {
     $this->setAttribute('class', trim($this->getAttribute('class').' '.$class));
     return $this;
   }
 
-  public function conditionClass($cond, $class): this {
+  public function conditionClass(bool $cond, string $class): this {
     if ($cond) {
       $this->addClass($class);
     }
