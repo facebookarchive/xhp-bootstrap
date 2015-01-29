@@ -22,7 +22,7 @@ abstract class :bootstrap:base extends :x:element {
   final protected function render(): :xhp {
     if (:xhp::$ENABLE_VALIDATION) {
       if ($this->_rendered) {
-        throw new XHPException(
+        throw new XHPClassException(
           $this,
           'Bootstrap components cannot be rendered more than once, as they '.
           'can mutate themselves during render. Reuse would likely cause '.
@@ -37,27 +37,23 @@ abstract class :bootstrap:base extends :x:element {
       $root = <x:frag />;
     } else {
       if (:xhp::$ENABLE_VALIDATION) {
-        if (!($root instanceof :xhp:html-element 
+        if (!($root instanceof :xhp:html-element
               || $root instanceof :bootstrap:base)) {
-          throw new XHPException(
+          throw new XHPClassException(
             $this,
             'compose() must return an :xhp:html-element or :bootstrap:base '.
             'instance.'
           );
         }
 
-        $rootID = array_key_exists('id', $root->getAttributes()) 
-          ? $root->getAttribute('id') 
-          : null;
-        $thisID = array_key_exists('id', $this->getAttributes()) 
-          ? $this->getAttribute('id') 
-          : null;
+        $rootID = $root->:id ?: null;
+        $thisID = $this->:id ?: null;
 
         if ($rootID && $thisID && $rootID != $thisID) {
           throw new XHPException(
-            $this,
-            'ID Collision. '.(:xhp::class2element($this)).' has an ID of "'.
-            $thisID.'" but it renders into a(n) '.(:xhp::class2element($root)).
+            'ID Collision. '.(:xhp::class2element(self::class)).' has an ID '.
+            'of "'.$thisID.'" but it renders into a(n) '.
+            (:xhp::class2element(get_class($root))).
             ' which has an ID of "'.$rootID.'". The latter will get '.
             'overwritten (most often unexpectedly). If you are intending for '.
             'this behavior consider calling $this->removeAttribute(\'id\') '.
