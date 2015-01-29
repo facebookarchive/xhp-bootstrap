@@ -10,7 +10,7 @@
  */
 
 final class :bootstrap:alert extends :bootstrap:base {
-  
+
   attribute
     :div,
     enum {
@@ -22,6 +22,7 @@ final class :bootstrap:alert extends :bootstrap:base {
 
   protected function compose(): :xhp {
     foreach($this->getChildren('a') as $child) {
+      assert($child instanceof :a);
       $child->addClass('alert-link');
     }
     $ret =

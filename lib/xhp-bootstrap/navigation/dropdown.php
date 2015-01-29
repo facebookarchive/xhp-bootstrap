@@ -18,11 +18,12 @@ final class :bootstrap:navigation:dropdown extends :bootstrap:base {
     :a,
     :bootstrap:dropdown:menu
   );
-  
+
   category %bootstrap:navigation:item;
 
   protected function compose(): :xhp {
     list($trigger, $menu) = $this->getChildren();
+    assert($trigger instanceof :a);
     $trigger->addClass('dropdown-toggle');
     $trigger->setAttribute('data-toggle', 'dropdown');
     return
