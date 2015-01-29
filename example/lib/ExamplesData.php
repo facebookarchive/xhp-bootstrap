@@ -29,6 +29,7 @@ class ExamplesData {
     $rc = new ReflectionClass($class);
     $example_class = $rc->getAttribute('ExamplesInClass');
     if ($example_class !== null) {
+      $example_class = $example_class[0];
       $mangled =
         'xhp_'.str_replace([':', '-'], ['__', '_'], substr($example_class, 1));
       $rc = new ReflectionClass($mangled);
