@@ -10,7 +10,7 @@
  */
 
 class :bootstrap:page-header extends :bootstrap:base {
-  
+
   attribute
     :div,
     string title @required,

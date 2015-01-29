@@ -10,7 +10,7 @@
  */
 
 final class :bootstrap:label extends :bootstrap:base {
-  
+
   attribute
     :span,
     enum {

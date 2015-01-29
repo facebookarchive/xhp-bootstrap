@@ -10,7 +10,7 @@
  */
 
 final class :bootstrap:jumbotron extends :bootstrap:base {
-  
+
   attribute
     :div,
     string title;

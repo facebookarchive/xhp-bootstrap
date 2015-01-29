@@ -11,7 +11,7 @@
 
 class ExamplesData {
   public static function GetBootstrapClasses(): Vector<string> {
-    $classmap = 
+    $classmap =
       require(__DIR__ . '/../../vendor/composer/autoload_classmap.php');
     $all_classes = new Vector(array_keys($classmap));
     return $all_classes->filter(
