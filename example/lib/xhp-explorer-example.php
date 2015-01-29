@@ -14,7 +14,7 @@ final class :xhp-explorer:example extends :x:element {
     ReflectionMethod example @required;
 
   protected function render(): :xhp {
-    $example = $this->getAttribute('example');
+    $example = $this->:example;
 
     return
       <div>
@@ -33,14 +33,14 @@ final class :xhp-explorer:example extends :x:element {
   }
 
   private function renderSource(): :xhp {
-    $example = $this->getAttribute('example');
+    $example = $this->:example;
 
     $file = file_get_contents($example->getFileName());
     $lines = explode("\n", $file);
     $source_lines = array_slice(
       $lines,
-      $example->getStartLine() - 1, // First line is 1, not 0
-      ($example->getEndLine() - $example->getStartLine()) + 1
+      (int) $example->getStartLine() - 1, // First line is 1, not 0
+      ((int) $example->getEndLine() - (int) $example->getStartLine()) + 1
     );
 
     return
@@ -50,7 +50,7 @@ final class :xhp-explorer:example extends :x:element {
   }
 
   private function renderOutput(): :xhp {
-    $example = $this->getAttribute('example');
+    $example = $this->:example;
     return
       <div class="example">
         {$example->invoke(null)}
@@ -58,7 +58,7 @@ final class :xhp-explorer:example extends :x:element {
   }
 
   private function getTitle(): XHPChild {
-    $example = $this->getAttribute('example');
+    $example = $this->:example;
     $title = $example->getAttribute('ExampleTitle');
     return $title === null ? $example->getName() : $title;
   }

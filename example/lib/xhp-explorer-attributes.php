@@ -16,7 +16,7 @@ final class :xhp-explorer:attributes extends :x:element {
 
   protected function render() {
     $rows = Vector { };
-    $class = $this->getAttribute('classname');
+    $class = (string) $this->:classname;
     $attrs = $class::__xhpAttributeDeclaration();
     $skip = new Set(array_keys(
       :xhp:html-element::__xhpAttributeDeclaration()
@@ -87,7 +87,7 @@ final class :xhp-explorer:attributes extends :x:element {
     if (!$rows->count()) {
       return <x:frag />;
     }
-    $title = $this->getAttribute('title');
+    $title = $this->:title;
     if ($title) {
       $title = <h2>{$title}</h2>;
     }

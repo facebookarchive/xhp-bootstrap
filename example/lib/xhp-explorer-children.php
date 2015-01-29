@@ -63,8 +63,8 @@ final class :xhp-explorer:children extends :x:element {
 
   protected function render() {
     $rows = Vector { };
-    $title = $this->getAttribute('title');
-    $class = $this->getAttribute('classname');
+    $title = $this->:title;
+    $class = (string) $this->:classname;
     $children = $this->parseChildren($class::__xhpChildrenDeclaration());
     return
       <x:frag>

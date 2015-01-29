@@ -31,7 +31,7 @@ final class :xhp-explorer:category extends :x:element {
     if (!$rows->count()) {
       return <x:frag />;
     }
-    $title = $this->getAttribute('title');
+    $title = $this->:title;
     if ($title) {
       $title = <h2>{$title}</h2>;
     }
