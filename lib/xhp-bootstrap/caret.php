@@ -13,7 +13,7 @@ final class :bootstrap:caret extends :bootstrap:base {
 
   attribute :span;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     return <span class="caret" />;
   }
 

@@ -15,7 +15,7 @@ final class :bootstrap:list-group extends :bootstrap:base {
 
   children (:bootstrap:list-group-item+);
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $ret = <div>{$this->getChildren()}</div>;
     $ret->addClass('list-group');
     return $ret;

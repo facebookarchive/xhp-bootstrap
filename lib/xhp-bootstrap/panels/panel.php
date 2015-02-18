@@ -28,7 +28,7 @@ class :bootstrap:panel extends :bootstrap:base {
     :bootstrap:panel:footer?
   );
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $ret =
       <div class={$this->:class}>
         {$this->getChildren()}

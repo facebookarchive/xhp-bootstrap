@@ -18,7 +18,7 @@ final class :bootstrap:dropdown:item extends :bootstrap:base {
 
   category %bootstrap:dropdown:element;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $link =
       <a role="menuitem" tabindex="-1">
         {$this->getChildren()}

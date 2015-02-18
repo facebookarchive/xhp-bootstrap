@@ -4,21 +4,27 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f39e3ce99f0f614c43ebe6e7e43ffbbc",
+    "hash": "00cf374b040f055380ef188c4a2cb37a",
     "packages": [
         {
             "name": "facebook/xhp-lib",
-            "version": "dev-master",
+            "version": "dev-hack",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/xhp-lib.git",
-                "reference": "c232a2187c51ffb9d153186e7dfbebf4bd0a7c20"
+                "reference": "a4b9eac109d21be1ae6d5bd78af52f0dd2149b38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/c232a2187c51ffb9d153186e7dfbebf4bd0a7c20",
-                "reference": "c232a2187c51ffb9d153186e7dfbebf4bd0a7c20",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/a4b9eac109d21be1ae6d5bd78af52f0dd2149b38",
+                "reference": "a4b9eac109d21be1ae6d5bd78af52f0dd2149b38",
                 "shasum": ""
+            },
+            "require": {
+                "hhvm": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.5.*"
             },
             "type": "library",
             "autoload": {
@@ -28,8 +34,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "PHP-3.01",
-                "Zend-2.0"
+                "BSD-3-Clause"
             ],
             "description": "Class library for XHP",
             "homepage": "https://github.com/facebook/xhp-lib",
@@ -39,7 +44,7 @@
                 "hhvm",
                 "xhp"
             ],
-            "time": "2015-01-13 18:18:33"
+            "time": "2015-02-18 20:13:34"
         }
     ],
     "packages-dev": [],
@@ -49,6 +54,7 @@
         "facebook/xhp-lib": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }

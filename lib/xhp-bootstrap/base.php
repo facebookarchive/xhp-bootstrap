@@ -10,16 +10,19 @@
  */
 
 abstract class :bootstrap:base extends :x:element {
+  attribute
+    string class,
+    string id;
 
   private bool $_rendered = false;
   private static $_specialAttributes = Set {'data', 'aria'};
 
-  abstract protected function compose(): ?:xhp;
+  abstract protected function compose(): ?XHPRoot;
 
   /**
    * Override compose() instead of this method for your content.
    */
-  final protected function render(): :xhp {
+  final protected function render(): XHPRoot {
     if (:xhp::$ENABLE_VALIDATION) {
       if ($this->_rendered) {
         throw new XHPClassException(
@@ -36,7 +39,7 @@ abstract class :bootstrap:base extends :x:element {
     if (!$root) {
       $root = <x:frag />;
     } else {
-      if (:xhp::$ENABLE_VALIDATION) {
+      if (:xhp::$ENABLE_VALIDATION && $root instanceof :x:element) {
         if (!($root instanceof :xhp:html-element
               || $root instanceof :bootstrap:base)) {
           throw new XHPClassException(
@@ -46,7 +49,7 @@ abstract class :bootstrap:base extends :x:element {
           );
         }
 
-        $rootID = $root->:id ?: null;
+        $rootID = $root->getAttribute('id') ?: null;
         $thisID = $this->:id ?: null;
 
         if ($rootID && $thisID && $rootID != $thisID) {
@@ -67,11 +70,13 @@ abstract class :bootstrap:base extends :x:element {
       // We want to append classes to the root node, instead of replace them,
       // so do this attribute manually and then remove it.
       if (array_key_exists('class', $attributes) && $attributes['class']) {
+        // UNSAFE
         $root->addClass($attributes['class']);
         $this->removeAttribute('class');
       }
 
       // Transfer all valid attributes to the returned node.
+      // UNSAFE
       $this->transferAttributes($root);
     }
 
@@ -147,7 +152,7 @@ abstract class :bootstrap:base extends :x:element {
     if (!($id = $this->:id)) {
       $this->setAttribute('id', $id = substr(md5(mt_rand(0, 100000)), 0, 10));
     }
-    return $id;
+    return (string) $id;
   }
 
   public function addClass(string $class): this {

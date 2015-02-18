@@ -26,7 +26,7 @@ class :bootstrap:navbar extends :bootstrap:base {
     %bootstrap:navigation:item*
   );
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $theme = $this->:theme;
     $position = $this->:position;
 

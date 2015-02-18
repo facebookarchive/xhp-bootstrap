@@ -16,7 +16,7 @@ final class :bootstrap:dropdown:divider extends :bootstrap:base {
 
   category %bootstrap:dropdown:element;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     return
       <li role="presentation" class="divider" />;
   }

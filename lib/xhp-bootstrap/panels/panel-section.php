@@ -16,7 +16,7 @@ abstract class :bootstrap:panel:section extends :bootstrap:base {
 
   abstract protected function getSectionStyle(): string;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $ret =
       <div class={$this->getSectionStyle()}>
         {$this->getChildren()}

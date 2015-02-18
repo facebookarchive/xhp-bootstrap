@@ -13,7 +13,7 @@ final class :bootstrap:progress-group extends :bootstrap:base {
 
   children (:bootstrap:progress-bar*);
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     return
       <div class="progress">
         {$this->getChildren()}

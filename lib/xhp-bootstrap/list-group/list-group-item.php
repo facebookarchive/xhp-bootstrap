@@ -23,7 +23,7 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
     } use,
     bool active = false;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $ret = <a>{$this->getChildren()}</a>;
     if ($this->:active) {
       $ret->addClass('active');

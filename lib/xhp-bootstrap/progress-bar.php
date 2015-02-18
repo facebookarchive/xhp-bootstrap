@@ -29,7 +29,7 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     int min = 0,
     int max = 100;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $val = $this->:value;
     $min = $this->:min;
     $max = $this->:max;
