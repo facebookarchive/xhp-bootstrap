@@ -29,32 +29,29 @@ final class :xhp-explorer:attributes extends :x:element {
       list($type, $extra_type, $default, $required) = $spec;
 
       switch ($type) {
-        case self::TYPE_STRING:
+        case XHPAttributeType::TYPE_STRING:
           $type = <code>string</code>;
           break;
-        case self::TYPE_BOOL:
+        case XHPAttributeType::TYPE_BOOL:
           $type = <code>bool</code>;
           break;
-        case self::TYPE_NUMBER:
+        case XHPAttributeType::TYPE_INTEGER:
           // yep, not a float, definitely an int
           $type = <code>int</code>;
           break;
-        case self::TYPE_ARRAY:
+        case XHPAttributeType::TYPE_ARRAY:
           $type = <code>array</code>;
           break;
-        case self::TYPE_OBJECT:
+        case XHPAttributeType::TYPE_OBJECT:
           $type = <code>{$extra_type}</code>;
           break;
-        case self::TYPE_VAR:
+        case XHPAttributeType::TYPE_VAR:
           $type = <em>any</em>;
           break;
-        case self::TYPE_FLOAT:
+        case XHPAttributeType::TYPE_FLOAT:
           $type = <code>float</code>;
           break;
-        case self::TYPE_CALLABLE:
-          $type = <code>callable</code>;
-          break;
-        case self::TYPE_ENUM:
+        case XHPAttributeType::TYPE_ENUM:
           $values = array_map(
             $x ==> var_export($x, true),
             $extra_type
