@@ -35,7 +35,7 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     $max = $this->:max;
     if (($min >= $max) || ($val >= $max)) {
       $width = 100;
-    } else if ($val < $max) {
+    } else if ($val < $min) {
       $width = 0;
     } else {
       $width = 100 * ($val - $min) / ($max - $min);
