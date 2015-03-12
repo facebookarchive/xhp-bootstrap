@@ -27,6 +27,7 @@ final class :bootstrap:table extends :bootstrap:base {
     }
     if ($this->:border) {
       $table->addClass('table-bordered');
+      $this->removeAttribute('border');
     }
     if ($this->:hover-rows) {
       $table->addClass('table-hover');
