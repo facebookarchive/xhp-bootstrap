@@ -1,4 +1,4 @@
-<?hh
+<?hh // strict
 /*
  *  Copyright (c) 2014, Facebook, Inc.
  *  All rights reserved.
@@ -14,21 +14,23 @@ final class :xhp-explorer:attributes extends :x:element {
     string classname @required,
     string title = 'Attributes';
 
-  protected function render() {
+  <<__IsFoldable>>
+  private static function GetSkipList(): Set<string> {
+    $rc = new ReflectionXHPClass(:xhp:html-element::class);
+    return new Set($rc->getAttributes()->keys());
+  }
+
+  protected function render(): XHPRoot {
     $rows = Vector { };
-    $class = (string) $this->:classname;
-    $attrs = $class::__xhpAttributeDeclaration();
-    $skip = new Set(array_keys(
-      :xhp:html-element::__xhpAttributeDeclaration()
-    ));
-    foreach ($attrs as $name => $spec) {
+    $rc = new ReflectionXHPClass($this->:classname);
+
+    $skip = self::GetSkipList();
+    foreach ($rc->getAttributes() as $name => $attr) {
       if ($skip->contains($name)) {
         continue;
       }
 
-      list($type, $extra_type, $default, $required) = $spec;
-
-      switch ($type) {
+      switch ($attr->getValueType()) {
         case XHPAttributeType::TYPE_STRING:
           $type = <code>string</code>;
           break;
@@ -36,14 +38,13 @@ final class :xhp-explorer:attributes extends :x:element {
           $type = <code>bool</code>;
           break;
         case XHPAttributeType::TYPE_INTEGER:
-          // yep, not a float, definitely an int
           $type = <code>int</code>;
           break;
         case XHPAttributeType::TYPE_ARRAY:
           $type = <code>array</code>;
           break;
         case XHPAttributeType::TYPE_OBJECT:
-          $type = <code>{$extra_type}</code>;
+          $type = <code>{$attr->getValueClass()}</code>;
           break;
         case XHPAttributeType::TYPE_VAR:
           $type = <em>any</em>;
@@ -52,10 +53,7 @@ final class :xhp-explorer:attributes extends :x:element {
           $type = <code>float</code>;
           break;
         case XHPAttributeType::TYPE_ENUM:
-          $values = array_map(
-            $x ==> var_export($x, true),
-            $extra_type
-          );
+          $values = $attr->getEnumValues()->map($x ==> "'".$x."'");
           $type =
             <code style="white-space: pre">
               {"enum {\n  " . implode(",\n  ", $values)."\n}"}
@@ -63,15 +61,15 @@ final class :xhp-explorer:attributes extends :x:element {
         break;
       }
 
-      if ($default === null) {
-        if (empty($required)) {
+      if (!$attr->hasDefaultValue()) {
+        if ($attr->isRequired()) {
           $default = <em>none</em>;
         } else {
           $default =
             <bootstrap:label use="warning">required</bootstrap:label>;
         }
       } else {
-        $default = <code>{var_export($default, true)}</code>;
+        $default = <code>{var_export($attr->getDefaultValue(), true)}</code>;
       }
 
       $rows[] =
