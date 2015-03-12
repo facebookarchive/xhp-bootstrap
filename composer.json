@@ -5,7 +5,7 @@
   "homepage": "https://github.com/hhvm/xhp-bootstrap",
   "license": ["BSD-3-Clause"],
   "require": {
-    "facebook/xhp-lib": "dev-hack"
+    "facebook/xhp-lib": "2.x-dev"
   },
   "autoload": {
     "classmap": ["lib/"]

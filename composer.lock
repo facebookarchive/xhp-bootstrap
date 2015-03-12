@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "00cf374b040f055380ef188c4a2cb37a",
+    "hash": "04fb0a27025a4c56a496e6f9e632f025",
     "packages": [
         {
             "name": "facebook/xhp-lib",
@@ -12,21 +12,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/xhp-lib.git",
-                "reference": "a4b9eac109d21be1ae6d5bd78af52f0dd2149b38"
+                "reference": "1cc064049b01ff6d7f05892b71616a86e2aadbc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/a4b9eac109d21be1ae6d5bd78af52f0dd2149b38",
-                "reference": "a4b9eac109d21be1ae6d5bd78af52f0dd2149b38",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/1cc064049b01ff6d7f05892b71616a86e2aadbc8",
+                "reference": "1cc064049b01ff6d7f05892b71616a86e2aadbc8",
                 "shasum": ""
             },
             "require": {
                 "hhvm": "*"
             },
             "require-dev": {
+                "91carriage/phpunit-hhi": "4.5.*",
                 "phpunit/phpunit": "4.5.*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-hack": "2.x-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "src/"
@@ -44,7 +50,7 @@
                 "hhvm",
                 "xhp"
             ],
-            "time": "2015-02-18 20:13:34"
+            "time": "2015-03-11 20:49:25"
         }
     ],
     "packages-dev": [],
