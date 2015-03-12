@@ -20,7 +20,7 @@ final class :xhp-explorer:category extends :x:element {
     foreach ($rc->getCategories() as $name) {
       $rows[] =
         <tr>
-          <td><code>{$name}</code></td>
+          <td><code>%{$name}</code></td>
         </tr>;
     }
     if (!$rows->count()) {

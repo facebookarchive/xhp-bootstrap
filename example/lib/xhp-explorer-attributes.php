@@ -14,7 +14,7 @@ final class :xhp-explorer:attributes extends :x:element {
     string classname @required,
     string title = 'Attributes';
 
-  <<__IsFoldable>>
+  <<__Memoize>>
   private static function GetSkipList(): Set<string> {
     $rc = new ReflectionXHPClass(:xhp:html-element::class);
     return new Set($rc->getAttributes()->keys());
