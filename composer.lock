@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/xhp-lib.git",
-                "reference": "1cc064049b01ff6d7f05892b71616a86e2aadbc8"
+                "reference": "32d48dafa0e45fcafacb057d4963f417e49b9c80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/1cc064049b01ff6d7f05892b71616a86e2aadbc8",
-                "reference": "1cc064049b01ff6d7f05892b71616a86e2aadbc8",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/32d48dafa0e45fcafacb057d4963f417e49b9c80",
+                "reference": "32d48dafa0e45fcafacb057d4963f417e49b9c80",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "hhvm",
                 "xhp"
             ],
-            "time": "2015-03-11 20:49:25"
+            "time": "2015-03-12 21:34:53"
         }
     ],
     "packages-dev": [],
