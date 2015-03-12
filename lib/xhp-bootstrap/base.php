@@ -87,8 +87,6 @@ abstract class :bootstrap:base extends :x:element {
 
 
   final private function transferAttributes(:xhp $target): void {
-    // UNSAFE - static polymorphism
-    // sparker: Is $target::__xhpAttributeDeclaration() valid in Hack?
     $validTargetAttributes = (new ReflectionXHPClass(get_class($target)))
       ->getAttributes();
     if (:xhp::$ENABLE_VALIDATION) {
@@ -100,9 +98,8 @@ abstract class :bootstrap:base extends :x:element {
       }
       if ($htmlAttributeCount > count($validTargetAttributes)) {
         throw new XHPException(
-          $this,
-          (:xhp::class2element($this)).' did not inherit attributes from an '.
-          'HTML element. :bootstrap:base automatically forwards valid '.
+          (:xhp::class2element(static::class)).' did not inherit attributes '.
+          'from an HTML element. :bootstrap:base automatically forwards valid '.
           'attributes to the element returned from compose(), but for this to '.
           'be valuable you should inherit the attributes of the element you '.
           'are returning. The syntax is: "attribute :div;" (for example). If '.
@@ -126,12 +123,12 @@ abstract class :bootstrap:base extends :x:element {
           // This can be dangerous because the result when validation is off
           // will be different than when validation is on, so you should fix
           // this by renaming one of the attributes.
+          $target = get_class($target);
           throw new XHPException(
-            $this,
-            (:xhp::class2element($this)).' and '.
+            (:xhp::class2element(static::class)).' and '.
             (:xhp::class2element($target)).' both support the "'.$attribute.
             '" but they have different signatures. This is a problem because '.
-            (:xhp::class2element($this)).' returns a(n) '.
+            (:xhp::class2element(static::class)).' returns a(n) '.
             (:xhp::class2element($target)).' compose() and transfering '.
             'to the latter can cause unexpected behavior. Rename the '.
             ' attribute on at least one of these elements to fix this.'
