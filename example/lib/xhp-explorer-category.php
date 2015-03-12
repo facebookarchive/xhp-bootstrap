@@ -16,13 +16,8 @@ final class :xhp-explorer:category extends :x:element {
 
   protected function render() {
     $rows = Vector { };
-    $class = (string) $this->:classname;
-    $cats = $class::__xhpCategoryDeclaration();
-    $skip = self::GetCategorySkipList();
-    foreach ($cats as $name => $dummy) {
-      if ($skip->contains($name)) {
-        continue;
-      }
+    $rc = new ReflectionXHPClass($this->:classname);
+    foreach ($rc->getCategories() as $name) {
       $rows[] =
         <tr>
           <td><code>{$name}</code></td>
@@ -44,14 +39,5 @@ final class :xhp-explorer:category extends :x:element {
           </tbody>
         </bootstrap:table>
       </x:frag>;
-  }
-
-  <<__IsFoldable>>
-  protected static function GetCategorySkipList(): Set<string> {
-    // __xhpCategoryDeclaration is currently non-static
-    // UNSAFE
-    return new Set(array_keys(
-      :html::__xhpCategoryDeclaration()
-    ));
   }
 }
