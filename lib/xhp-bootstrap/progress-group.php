@@ -24,16 +24,16 @@ final class :bootstrap:progress-group extends :bootstrap:base {
   public static function __example1(): :xhp {
     return
       <bootstrap:progress-group>
-        <bootstrap:progress-bar use="success" value="20">
+        <bootstrap:progress-bar use="success" value={20}>
           Success
         </bootstrap:progress-bar>
-        <bootstrap:progress-bar use="info" value="20" stripes="on">
+        <bootstrap:progress-bar use="info" value={20} stripes="on">
           Info
         </bootstrap:progress-bar>
-        <bootstrap:progress-bar use="warning" value="20" stripes="active">
+        <bootstrap:progress-bar use="warning" value={20} stripes="active">
           Warning
         </bootstrap:progress-bar>
-        <bootstrap:progress-bar use="danger" value="20">
+        <bootstrap:progress-bar use="danger" value={20}>
           Danger
         </bootstrap:progress-bar>
       </bootstrap:progress-group>;

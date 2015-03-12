@@ -119,7 +119,7 @@ class :bootstrap:button extends :bootstrap:base {
         <bootstrap:button>
           Default
         </bootstrap:button>
-        <bootstrap:button active="true">
+        <bootstrap:button active={true}>
           Active
         </bootstrap:button>
       </x:frag>;
@@ -132,7 +132,7 @@ class :bootstrap:button extends :bootstrap:base {
         <bootstrap:button>
           Default
         </bootstrap:button>
-        <bootstrap:button disabled="true">
+        <bootstrap:button disabled={true}>
           Disabled
         </bootstrap:button>
       </x:frag>;
@@ -145,7 +145,7 @@ class :bootstrap:button extends :bootstrap:base {
         <bootstrap:button>
           Default
         </bootstrap:button>
-        <bootstrap:button block="true">
+        <bootstrap:button block={true}>
           Block
         </bootstrap:button>
       </x:frag>;

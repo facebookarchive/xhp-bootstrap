@@ -45,7 +45,7 @@ final class :bootstrap:dropdown extends :bootstrap:base {
           <bootstrap:dropdown:item href="#">
             Bar
           </bootstrap:dropdown:item>
-          <bootstrap:dropdown:item disabled="true" href="#">
+          <bootstrap:dropdown:item disabled={true} href="#">
             Disabled
           </bootstrap:dropdown:item>
         </bootstrap:dropdown:menu>

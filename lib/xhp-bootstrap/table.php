@@ -63,7 +63,7 @@ final class :bootstrap:table extends :bootstrap:base {
   <<ExampleTitle('With Border')>>
   public static function __example2() {
     return
-      <bootstrap:table border="true">
+      <bootstrap:table border={true}>
         <thead>
           <tr>
             <th>#</th>
@@ -82,7 +82,7 @@ final class :bootstrap:table extends :bootstrap:base {
   <<ExampleTitle('Striped')>>
   public static function __example3() {
     return
-      <bootstrap:table striped="true">
+      <bootstrap:table striped={true}>
         <thead>
           <tr>
             <th>#</th>
@@ -101,7 +101,7 @@ final class :bootstrap:table extends :bootstrap:base {
   <<ExampleTitle('Condensed')>>
   public static function __example4() {
     return
-      <bootstrap:table condensed="true">
+      <bootstrap:table condensed={true}>
         <thead>
           <tr>
             <th>#</th>
@@ -120,7 +120,7 @@ final class :bootstrap:table extends :bootstrap:base {
   <<ExampleTitle('Row hover effect')>>
   public static function __example5() {
     return
-      <bootstrap:table hover-rows="true">
+      <bootstrap:table hover-rows={true}>
         <thead>
           <tr>
             <th>#</th>

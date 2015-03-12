@@ -48,7 +48,7 @@ final class :bootstrap:nav extends :bootstrap:base {
         <bootstrap:navigation:link href="#">
           Link
         </bootstrap:navigation:link>
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Active Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:link href="#">
@@ -64,7 +64,7 @@ final class :bootstrap:nav extends :bootstrap:base {
         <bootstrap:navigation:link href="#">
           Link
         </bootstrap:navigation:link>
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Active Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:link href="#">
@@ -77,7 +77,7 @@ final class :bootstrap:nav extends :bootstrap:base {
   public static function __example3() {
     return
       <bootstrap:nav navstyle="pills">
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:dropdown>
@@ -111,7 +111,7 @@ final class :bootstrap:nav extends :bootstrap:base {
         <bootstrap:navigation:link href="#">
           Link
         </bootstrap:navigation:link>
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Active Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:link href="#">
@@ -127,7 +127,7 @@ final class :bootstrap:nav extends :bootstrap:base {
         <bootstrap:navigation:link href="#">
           Link
         </bootstrap:navigation:link>
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Active Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:link href="#">
