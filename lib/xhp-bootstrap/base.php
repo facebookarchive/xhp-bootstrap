@@ -89,12 +89,13 @@ abstract class :bootstrap:base extends :x:element {
   final private function transferAttributes(:xhp $target): void {
     // UNSAFE - static polymorphism
     // sparker: Is $target::__xhpAttributeDeclaration() valid in Hack?
-    $validTargetAttributes = $target->__xhpAttributeDeclaration();
+    $validTargetAttributes = (new ReflectionXHPClass(get_class($target)))
+      ->getAttributes();
     if (:xhp::$ENABLE_VALIDATION) {
       static $htmlAttributeCount = 0;
       if ($htmlAttributeCount == 0) {
         $htmlAttributeCount = count(
-          :xhp:html-element::__xhpAttributeDeclaration()
+          (new ReflectionXHPClass(:xhp:html-element::class))->getAttributes()
         );
       }
       if ($htmlAttributeCount > count($validTargetAttributes)) {
@@ -113,11 +114,9 @@ abstract class :bootstrap:base extends :x:element {
     }
 
     foreach ($this->getAttributes() as $attribute => $value) {
-      if (isset($validTargetAttributes[$attribute])
-          || (isset($attribute[5])
-            && $attribute[4] == '-'
-            && self::$_specialAttributes->contains(substr($attribute, 0, 4))
-          )
+      if (
+        $validTargetAttributes->containsKey($attribute)
+        || ReflectionXHPAttribute::IsSpecial($attribute)
       ) {
         try {
           $target->setAttribute($attribute, $value);
