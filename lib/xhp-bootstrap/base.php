@@ -11,8 +11,8 @@
 
 abstract class :bootstrap:base extends :x:element {
   attribute
-    string class,
-    string id;
+    Stringish class,
+    Stringish id;
 
   private bool $_rendered = false;
   private static $_specialAttributes = Set {'data', 'aria'};

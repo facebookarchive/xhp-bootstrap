@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/xhp-lib.git",
-                "reference": "1f14c6a71b67a7ff084ad652756d44d17733b8c6"
+                "reference": "5f4e194d5ab865f3c46dc44fece77cd3d9064bfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/1f14c6a71b67a7ff084ad652756d44d17733b8c6",
-                "reference": "1f14c6a71b67a7ff084ad652756d44d17733b8c6",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/5f4e194d5ab865f3c46dc44fece77cd3d9064bfd",
+                "reference": "5f4e194d5ab865f3c46dc44fece77cd3d9064bfd",
                 "shasum": ""
             },
             "require": {
@@ -50,7 +50,7 @@
                 "hhvm",
                 "xhp"
             ],
-            "time": "2015-03-12 22:40:40"
+            "time": "2015-03-19 21:43:39"
         }
     ],
     "packages-dev": [
@@ -422,21 +422,24 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.6.4",
+            "version": "v2.6.5",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8"
+                "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/60ed7751671113cf1ee7d7778e691642c2e9acd8",
-                "reference": "60ed7751671113cf1ee7d7778e691642c2e9acd8",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
+                "reference": "0cd8e72071e46e15fc072270ae39ea1b66b10a9d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -465,7 +468,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-25 04:39:26"
+            "time": "2015-03-12 10:28:44"
         }
     ],
     "aliases": [],
