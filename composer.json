@@ -1,6 +1,6 @@
 {
   "name": "hhvm/xhp-bootstrap",
-  "description": "Twitter Bootstrap using XHP",
+  "description": "Use Bootstrap with XHP",
   "keywords": ["facebook", "xhp", "hhvm", "hack", "bootstrap"],
   "homepage": "https://github.com/hhvm/xhp-bootstrap",
   "license": ["BSD-3-Clause"],
