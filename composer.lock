@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e8c9149bb222cc288c54980968b23913",
+    "hash": "3aaf4017c98a7f42034ce9f2dda49f5c",
     "packages": [
         {
             "name": "facebook/xhp-lib",
-            "version": "dev-hack",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/xhp-lib.git",
-                "reference": "968a794778260c5e3ca9dade39dcad72789e21e4"
+                "reference": "34aac8d284fee468378b33988e62a699b514227b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/968a794778260c5e3ca9dade39dcad72789e21e4",
-                "reference": "968a794778260c5e3ca9dade39dcad72789e21e4",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/34aac8d284fee468378b33988e62a699b514227b",
+                "reference": "34aac8d284fee468378b33988e62a699b514227b",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-hack": "2.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -50,7 +50,7 @@
                 "hhvm",
                 "xhp"
             ],
-            "time": "2015-04-03 18:10:22"
+            "time": "2015-04-06 16:53:37"
         }
     ],
     "packages-dev": [
@@ -475,9 +475,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "facebook/xhp-lib": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
