@@ -22,7 +22,7 @@ final class :bootstrap:label extends :bootstrap:base {
         'danger'
     } use = 'default';
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $ret =
       <span class={$this->:class}>
         {$this->getChildren()}

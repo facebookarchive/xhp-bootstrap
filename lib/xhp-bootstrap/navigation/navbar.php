@@ -26,7 +26,7 @@ class :bootstrap:navbar extends :bootstrap:base {
     %bootstrap:navigation:item*
   );
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $theme = $this->:theme;
     $position = $this->:position;
 
@@ -69,7 +69,7 @@ class :bootstrap:navbar extends :bootstrap:base {
         <bootstrap:navigation:link href="#">
           Link
         </bootstrap:navigation:link>
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Active Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:link href="#">
@@ -107,7 +107,7 @@ class :bootstrap:navbar extends :bootstrap:base {
         <bootstrap:navigation:link href="#">
           Link
         </bootstrap:navigation:link>
-        <bootstrap:navigation:link href="#" active="true">
+        <bootstrap:navigation:link href="#" active={true}>
           Active Link
         </bootstrap:navigation:link>
         <bootstrap:navigation:link href="#">

@@ -16,7 +16,7 @@ final class :bootstrap:dropdown:menu extends :bootstrap:base {
 
   children (%bootstrap:dropdown:element*);
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     return
       <ul class="dropdown-menu" role="menu">
         {$this->getChildren()}

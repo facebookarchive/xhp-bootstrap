@@ -216,7 +216,7 @@ final class :bootstrap:glyphicon extends :bootstrap:base {
     } icon @required,
     :bootstrap:base;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $this->addClass('glyphicon');
     $this->addClass('glyphicon-'.$this->:icon);
 

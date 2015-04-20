@@ -27,7 +27,7 @@ final class :bootstrap:button-group extends :bootstrap:base {
 
   children ((:bootstrap:button|:bootstrap:button-group)+);
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $class = $this->:orientation === 'horizontal'
       ? 'btn-group' : 'btn-group-vertical';
     $ret = <div class={$class}>{$this->getChildren()}</div>;
@@ -99,7 +99,7 @@ final class :bootstrap:button-group extends :bootstrap:base {
   <<ExampleTitle('Justified')>>
   public static function __example4() {
     return
-      <bootstrap:button-group justified="true">
+      <bootstrap:button-group justified={true}>
         <bootstrap:button>1</bootstrap:button>
         <bootstrap:button>2</bootstrap:button>
         <bootstrap:button>3</bootstrap:button>

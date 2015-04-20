@@ -13,7 +13,7 @@ final class :xhp-explorer:example extends :x:element {
   attribute
     ReflectionMethod example @required;
 
-  protected function render(): :xhp {
+  protected function render(): XHPRoot {
     $example = $this->:example;
 
     return

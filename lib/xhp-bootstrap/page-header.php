@@ -16,7 +16,7 @@ class :bootstrap:page-header extends :bootstrap:base {
     string title @required,
     string subtext;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $subtext = $this->:subtext;
     if ($subtext !== null) {
       $subtext =

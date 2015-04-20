@@ -14,58 +14,73 @@ final class :xhp-explorer:children extends :x:element {
     string classname @required,
     string title = 'Children';
 
-  protected function parseRule($type, $decl) {
-    $name = str_replace(['__','_'], [':', '-'], $decl);
-    switch ($type) {
-      case 0: return <x:frag>empty</x:frag>;
-      case 1: return <x:frag>any</x:frag>;
-      case 2: return <x:frag>pcdata</x:frag>;
-      case 3:
-        if (!strncmp('xhp_bootstrap__', $decl, 15)) {
-          $name = substr($name, 4);
-          return <a href={"?classname={$decl}"}>{$name}</a>;
+  private function renderDecl(
+    ReflectionXHPChildrenDeclaration $decl,
+  ): XHPChild {
+    switch ($decl->getType()) {
+      case XHPChildrenDeclarationType::NO_CHILDREN:
+        return <em>empty</em>;
+      case XHPChildrenDeclarationType::ANY_CHILDREN:
+        return <em>any</em>;
+      case XHPChildrenDeclarationType::EXPRESSION:
+        return <x:frag>({$this->renderExpr($decl->getExpression())})</x:frag>;
+    }
+  }
+
+  private function renderExpr(
+    ReflectionXHPChildrenExpression $expr,
+  ): XHPChild {
+    switch ($expr->getType()) {
+      case XHPChildrenExpressionType::SINGLE:
+        return $this->renderRule($expr);
+      case XHPChildrenExpressionType::ANY_NUMBER:
+        return <x:frag>{$this->renderRule($expr)}*</x:frag>;
+      case XHPChildrenExpressionType::ZERO_OR_ONE:
+        return <x:frag>{$this->renderRule($expr)}?</x:frag>;
+      case XHPChildrenExpressionType::ONE_OR_MORE:
+        return <x:frag>{$this->renderRule($expr)}+</x:frag>;
+      case XHPChildrenExpressionType::SUB_EXPR_SEQUENCE:
+        list($e1, $e2) = $expr->getSubExpressions();
+        return
+          <x:frag>{$this->renderExpr($e1)}, {$this->renderExpr($e2)}</x:frag>;
+      case XHPChildrenExpressionType::SUB_EXPR_DISJUNCTION:
+        list($e1, $e2) = $expr->getSubExpressions();
+        return
+          <x:frag>{$this->renderExpr($e1)} | {$this->renderExpr($e2)}</x:frag>;
+    }
+  }
+
+  private function renderRule(
+    ReflectionXHPChildrenExpression $rule,
+  ): XHPChild {
+    switch ($rule->getConstraintType()) {
+      case XHPChildrenConstraintType::ANY:
+        return <em>any</em>;
+      case XHPChildrenConstraintType::PCDATA:
+        return <em>pcdata</em>;
+      case XHPChildrenConstraintType::ELEMENT:
+        $class = $rule->getConstraintString();
+        $elem = :xhp::class2element($class);
+        if (!strncmp('xhp_bootstrap__', $class, 15)) {
+          return
+            <code><a href={'?classname='.$class}>{$elem}</a></code>;
         } else {
-          return <x:frag>{$name}</x:frag>;
+          return <code>{$elem}</code>;
         }
-      case 4: return <x:frag>{$name}</x:frag>;
-      case 5: return $this->parseChildren($decl);
+      case XHPChildrenConstraintType::CATEGORY:
+        return <code>%{$rule->getConstraintString()}</code>;
+      case XHPChildrenConstraintType::SUB_EXPR:
+        return $this->renderExpr($rule->getSubExpression());
     }
   }
 
-  protected function parseChildren($c) {
-    if (is_int($c)) {
-      return $this->parseRule($c, 'unknown'); // Should be 1 or 2
-    }
-
-    static $symbols = [
-      0 => '',    // Exactly once
-      1 => '*',   // Zero or more
-      2 => '?',   // Zero or once
-      3 => '+',   // One or more
-      4 => ', ',  // Specific order
-      5 => ' | ', // Selection
-    ];
-    switch ($c[0]) {
-      case 0: case 1: case 2: case 3:
-        return
-          <x:frag>
-            {$this->parseRule($c[1], $c[2])}{$symbols[$c[0]]}
-          </x:frag>;
-      case 4: case 5:
-        return
-          <x:frag>
-            {$this->parseChildren($c[1])}
-            {$symbols[$c[0]]}
-            {$this->parseChildren($c[2])}
-          </x:frag>;
-    }
-  }
-
-  protected function render() {
+  protected function render(): XHPRoot {
     $rows = Vector { };
     $title = $this->:title;
-    $class = (string) $this->:classname;
-    $children = $this->parseChildren($class::__xhpChildrenDeclaration());
+    $children = $this->renderDecl(
+      (new ReflectionXHPClass($this->:classname))
+      ->getChildren()
+    );
     return
       <x:frag>
         <h2>{$title}</h2>

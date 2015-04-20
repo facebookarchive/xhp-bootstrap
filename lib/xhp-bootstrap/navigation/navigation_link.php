@@ -21,7 +21,7 @@ class :bootstrap:navigation:link extends :bootstrap:base {
 
   category %bootstrap:navigation:item;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     return
       <li class={$this->:active ? 'active' : null}>
         <a href={$this->:href}>

@@ -20,7 +20,7 @@ final class :bootstrap:alert extends :bootstrap:base {
       'danger'
     } use = 'warning';
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     foreach($this->getChildren('a') as $child) {
       assert($child instanceof :a);
       $child->addClass('alert-link');

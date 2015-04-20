@@ -13,7 +13,7 @@ final class :bootstrap:badge extends :bootstrap:base {
 
   attribute :span;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $ret = <span>{$this->getChildren()}</span>;
     $class = (string) $this->:class;
     if ($class) {

@@ -29,13 +29,13 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     int min = 0,
     int max = 100;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
     $val = $this->:value;
     $min = $this->:min;
     $max = $this->:max;
     if (($min >= $max) || ($val >= $max)) {
       $width = 100;
-    } else if ($val < $max) {
+    } else if ($val < $min) {
       $width = 0;
     } else {
       $width = 100 * ($val - $min) / ($max - $min);
@@ -66,22 +66,22 @@ final class :bootstrap:progress-bar extends :bootstrap:base {
     return
       <x:frag>
         <bootstrap:progress-group>
-          <bootstrap:progress-bar use="success" value="100">
+          <bootstrap:progress-bar use="success" value={100}>
             Success
           </bootstrap:progress-bar>
         </bootstrap:progress-group>
         <bootstrap:progress-group>
-          <bootstrap:progress-bar use="info" value="80" stripes="on">
+          <bootstrap:progress-bar use="info" value={80} stripes="on">
             Info
           </bootstrap:progress-bar>
         </bootstrap:progress-group>
         <bootstrap:progress-group>
-          <bootstrap:progress-bar use="warning" value="40" stripes="active">
+          <bootstrap:progress-bar use="warning" value={40} stripes="active">
             Warning
           </bootstrap:progress-bar>
         </bootstrap:progress-group>
         <bootstrap:progress-group>
-          <bootstrap:progress-bar use="danger" value="20">
+          <bootstrap:progress-bar use="danger" value={20}>
             Danger
           </bootstrap:progress-bar>
         </bootstrap:progress-group>

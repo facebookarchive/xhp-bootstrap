@@ -1,0 +1,11 @@
+language: php
+
+php:
+  - hhvm
+  - hhvm-nightly
+
+before_script:
+  - composer self-update
+  - composer install
+
+script: vendor/bin/phpunit tests/

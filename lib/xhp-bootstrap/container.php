@@ -13,7 +13,11 @@ class :bootstrap:container extends :bootstrap:base {
 
   attribute :div;
 
-  protected function compose(): :xhp {
+  protected function compose(): XHPRoot {
+    $class = (string) $this->:class;
+    if ($class) {
+      $this->addClass($class);
+    }
     $this->addClass("container");
     return
       <div>
