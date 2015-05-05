@@ -16,7 +16,7 @@ class :bootstrap:navbar:brand extends :bootstrap:base {
     :a,
     Stringish href @required;
 
-  protected function compose(): XHPRoot {
+  protected function render(): XHPRoot {
     return
       <a href={$this->:href} class="navbar-brand">
         {$this->getChildren()}

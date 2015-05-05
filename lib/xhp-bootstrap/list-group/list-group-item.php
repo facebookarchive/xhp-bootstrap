@@ -20,10 +20,10 @@ final class :bootstrap:list-group-item extends :bootstrap:base {
       'warning',
       'danger',
       'none'
-    } use,
+    } use = 'none',
     bool active = false;
 
-  protected function compose(): XHPRoot {
+  protected function render(): XHPRoot {
     $ret = <a>{$this->getChildren()}</a>;
     if ($this->:active) {
       $ret->addClass('active');

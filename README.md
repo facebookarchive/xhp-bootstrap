@@ -11,8 +11,7 @@ XHP classes for these components.
 Requirements
 ------------
 
-- [HHVM](http://hhvm.com/) with `hhvm.enable_xhp=1` set in the ini file
-(or `Eval.EnableXHP=1` in the HDF file)
+- [HHVM](http://hhvm.com/) 3.6 or later
 - [Composer](https://getcomposer.org/)
 
 Getting Started

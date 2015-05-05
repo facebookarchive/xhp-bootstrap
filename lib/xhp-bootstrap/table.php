@@ -19,7 +19,7 @@ final class :bootstrap:table extends :bootstrap:base {
     bool condensed = false,
     bool responsive = false;
 
-  protected function compose(): XHPRoot {
+  protected function render(): XHPRoot {
     $table = <table>{$this->getChildren()}</table>;
     $table->addClass('table');
     if ($this->:striped) {
