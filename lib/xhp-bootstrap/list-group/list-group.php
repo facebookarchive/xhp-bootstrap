@@ -13,7 +13,7 @@ final class :bootstrap:list-group extends :bootstrap:base {
 
   attribute :xhp:html-element;
 
-  children ((:bootstrap:list-group-item|:li)*);
+  children ((:bootstrap:list-group-item+|:li+)?);
 
   protected function compose(): XHPRoot {
     $children = $this->getChildren();
@@ -27,13 +27,6 @@ final class :bootstrap:list-group extends :bootstrap:base {
         $have_items = true;
       }
     }
-    // TODO: investigate enforcing this with a child rule. Possible
-    // XHP-Lib bug
-    invariant(
-      !($have_li && $have_items),
-      'must have :li *or* :bootstrap:list-group-item children, not both',
-    );
-
     if ($have_li) {
       return <ul class="list-group">{$children}</ul>;
     }
