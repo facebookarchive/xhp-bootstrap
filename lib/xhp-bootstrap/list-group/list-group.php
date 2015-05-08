@@ -11,14 +11,26 @@
 
 final class :bootstrap:list-group extends :bootstrap:base {
 
-  attribute :div;
+  attribute :xhp:html-element;
 
-  children (:bootstrap:list-group-item+);
+  children ((:bootstrap:list-group-item+|:li+)?);
 
   protected function compose(): XHPRoot {
-    $ret = <div>{$this->getChildren()}</div>;
-    $ret->addClass('list-group');
-    return $ret;
+    $children = $this->getChildren();
+    $have_li = false;
+    $have_items = false;
+    foreach ($children as $child) {
+      if ($child instanceof :li) {
+        $child->addClass('list-group-item');
+        $have_li = true;
+      } else {
+        $have_items = true;
+      }
+    }
+    if ($have_li) {
+      return <ul class="list-group">{$children}</ul>;
+    }
+    return <div class="list-group">{$children}</div>;
   }
 
   <<ExampleTitle('Basic usage')>>
@@ -113,5 +125,4 @@ final class :bootstrap:list-group extends :bootstrap:base {
         </bootstrap:list-group-item>
       </bootstrap:list-group>;
   }
-
 }

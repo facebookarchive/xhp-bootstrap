@@ -14,6 +14,8 @@ final class :bootstrap:dropdown:header extends :bootstrap:base {
 
   attribute :li;
 
+  category %bootstrap:dropdown:element;
+
   protected function compose(): XHPRoot {
     return
       <li role="presentation" class="dropdown-header">

@@ -25,6 +25,7 @@ class :bootstrap:panel extends :bootstrap:base {
   children (
     :bootstrap:panel:heading?,
     :bootstrap:panel:body?,
+    :bootstrap:list-group?,
     :bootstrap:panel:footer?
   );
 
@@ -65,10 +66,10 @@ class :bootstrap:panel extends :bootstrap:base {
           <bootstrap:panel:heading>
             Help help
           </bootstrap:panel:heading>
-          <ul class="list-group">
-            <li class="list-group-item">Item 1</li>
-            <li class="list-group-item">Item 2</li>
-          </ul>
+          <bootstrap:list-group>
+            <li>Item 1</li>
+            <li>Item 2</li>
+          </bootstrap:list-group>
         </bootstrap:panel>
       </x:frag>;
   }
