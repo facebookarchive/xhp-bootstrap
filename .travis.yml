@@ -4,6 +4,8 @@ php:
   - hhvm
 
 before_script:
+  - sudo apt-get -qq update
+  - yes Y | sudo apt-get -qq install hhvm
   - composer self-update
   - composer install
 

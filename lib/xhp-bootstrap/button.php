@@ -33,7 +33,7 @@ class :bootstrap:button extends :bootstrap:base {
     bool disabled = false,
     Stringish href;
 
-  protected function compose(): XHPRoot {
+  protected function render(): XHPRoot {
     $ret =
       <a href={$this->:href}>
         {$this->getChildren()}

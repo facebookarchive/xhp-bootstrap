@@ -19,7 +19,7 @@ class :bootstrap:root extends :bootstrap:base {
     :bootstrap:footer?
   );
 
-  protected function compose() {
+  protected function render() {
     return <div id="wrap">{$this->getChildren()}</div>;
   }
 

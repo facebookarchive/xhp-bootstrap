@@ -21,7 +21,7 @@ final class :bootstrap:navigation:dropdown extends :bootstrap:base {
 
   category %bootstrap:navigation:item;
 
-  protected function compose(): XHPRoot {
+  protected function render(): XHPRoot {
     list($trigger, $menu) = $this->getChildren();
     assert($trigger instanceof :a);
     $trigger->addClass('dropdown-toggle');

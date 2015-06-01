@@ -9,15 +9,11 @@
  *
  */
 
-class :bootstrap:container extends :bootstrap:base {
+class :bootstrap:container extends :bootstrap:base implements HasXHPHelpers {
 
   attribute :div;
 
-  protected function compose(): XHPRoot {
-    $class = (string) $this->:class;
-    if ($class) {
-      $this->addClass($class);
-    }
+  protected function render(): XHPRoot {
     $this->addClass("container");
     return
       <div>
