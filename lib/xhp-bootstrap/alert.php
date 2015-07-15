@@ -13,6 +13,7 @@ final class :bootstrap:alert extends :bootstrap:base {
 
   attribute
     :div,
+    bool dimissible = false,
     enum {
       'success',
       'info',
@@ -33,6 +34,14 @@ final class :bootstrap:alert extends :bootstrap:base {
     $ret->addClass('alert');
     $ret->addClass('alert-'.$this->:use);
 
+    if ($this->:dimissible) {
+        $close =
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>;
+	$this->prependChild($close);
+    }
+
     return $ret;
   }
 
@@ -49,7 +58,7 @@ final class :bootstrap:alert extends :bootstrap:base {
         <bootstrap:alert use="warning">
           WAT??
         </bootstrap:alert>
-        <bootstrap:alert use="danger">
+        <bootstrap:alert use="danger" dismissible="true">
           May day May day
           <a href="https://somewhere.com">Go here</a>
         </bootstrap:alert>
