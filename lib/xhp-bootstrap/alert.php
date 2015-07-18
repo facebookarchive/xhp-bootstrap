@@ -35,11 +35,11 @@ final class :bootstrap:alert extends :bootstrap:base {
     $ret->addClass('alert-'.$this->:use);
 
     if ($this->:dimiss) {
-        $close =
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>;
-	$this->prependChild($close);
+      $close =
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>;
+      $this->prependChild($close);
     }
 
     return $ret;
