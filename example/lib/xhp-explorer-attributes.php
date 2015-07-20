@@ -58,7 +58,10 @@ final class :xhp-explorer:attributes extends :x:element {
             <code style="white-space: pre">
               {"enum {\n  " . implode(",\n  ", $values)."\n}"}
             </code>;
-        break;
+          break;
+        default:
+          $value = '<unknown>';
+          $type = '<unknown>';
       }
 
       if (!$attr->hasDefaultValue()) {
