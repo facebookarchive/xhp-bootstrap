@@ -19,13 +19,14 @@ final class :bootstrap:well extends :bootstrap:base {
     } size = 'default';
 
   protected function render(): XHPRoot {
-    $ret = <div>
-      {$this->getChildren()}
+    $ret =
+      <div>
+        {$this->getChildren()}
       </div>;
 
-    if ($this->:size == 'large') {
+    if ($this->:size === 'large') {
       $ret->addClass('well-lg');
-    } elseif ($this->:size == 'small') {
+    } elseif ($this->:size === 'small') {
       $ret->addClass('well-sm');
     }
 
