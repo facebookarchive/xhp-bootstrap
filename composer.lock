@@ -4,28 +4,30 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "08316f713861257fb9f74c1f96bec075",
+    "hash": "8ec4eff029c47079e8f2a827b819f960",
+    "content-hash": "4b93af68fa3872741f3d21fe25de364b",
     "packages": [
         {
             "name": "facebook/xhp-lib",
-            "version": "2.2.2",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/xhp-lib.git",
-                "reference": "bda55865943077aa3893ee3f6c34a45c7081e274"
+                "reference": "4d2e2640534f50debe04f6a398db064fa6b1bb72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/bda55865943077aa3893ee3f6c34a45c7081e274",
-                "reference": "bda55865943077aa3893ee3f6c34a45c7081e274",
+                "url": "https://api.github.com/repos/facebook/xhp-lib/zipball/4d2e2640534f50debe04f6a398db064fa6b1bb72",
+                "reference": "4d2e2640534f50debe04f6a398db064fa6b1bb72",
                 "shasum": ""
             },
             "require": {
-                "hhvm": "~3.6"
+                "fredemmott/type-assert": "^0.2.0 || ^1.0",
+                "hhvm": "~3.12"
             },
             "require-dev": {
-                "91carriage/phpunit-hhi": "4.5.*",
-                "phpunit/phpunit": "4.5.*"
+                "91carriage/phpunit-hhi": "^5.1.0",
+                "phpunit/phpunit": "^5.1.0"
             },
             "type": "library",
             "extra": {
@@ -50,7 +52,45 @@
                 "hhvm",
                 "xhp"
             ],
-            "time": "2015-07-14 17:48:46"
+            "time": "2016-12-04 21:31:50"
+        },
+        {
+            "name": "fredemmott/type-assert",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fredemmott/type-assert.git",
+                "reference": "4b6ccc8b6abb503308472c440f30a3e2d5e5d2e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fredemmott/type-assert/zipball/4b6ccc8b6abb503308472c440f30a3e2d5e5d2e0",
+                "reference": "4b6ccc8b6abb503308472c440f30a3e2d5e5d2e0",
+                "shasum": ""
+            },
+            "require": {
+                "hhvm": "~3.12"
+            },
+            "require-dev": {
+                "91carriage/phpunit-hhi": "~5.1",
+                "phpunit/phpunit": "~5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "description": "Convert untyped data to typed data",
+            "keywords": [
+                "TypeAssert",
+                "hack"
+            ],
+            "time": "2016-12-04 19:05:17"
         }
     ],
     "packages-dev": [
@@ -117,16 +157,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "1.4.0",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "a923bb15680d0089e2316f7a4af8f437046e96bb"
+                "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/a923bb15680d0089e2316f7a4af8f437046e96bb",
-                "reference": "a923bb15680d0089e2316f7a4af8f437046e96bb",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
+                "reference": "3cc8f69b3028d0f96a9078e6295d86e9bf019be5",
                 "shasum": ""
             },
             "require": {
@@ -160,7 +200,7 @@
                 "filesystem",
                 "iterator"
             ],
-            "time": "2015-04-02 05:19:05"
+            "time": "2016-10-03 07:40:28"
         },
         {
             "name": "phpunit/php-text-template",
@@ -205,20 +245,23 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.6",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "83fe1bdc5d47658b727595c14da140da92b3d66d"
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/83fe1bdc5d47658b727595c14da140da92b3d66d",
-                "reference": "83fe1bdc5d47658b727595c14da140da92b3d66d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4|~5"
             },
             "type": "library",
             "autoload": {
@@ -242,7 +285,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2015-06-13 07:35:30"
+            "time": "2016-05-12 18:03:57"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -418,34 +461,34 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.2",
+            "version": "v2.8.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Yaml.git",
-                "reference": "4bfbe0ed3909bfddd75b70c094391ec1f142f860"
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "befb26a3713c97af90d25dd12e75621ef14d91ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4bfbe0ed3909bfddd75b70c094391ec1f142f860",
-                "reference": "4bfbe0ed3909bfddd75b70c094391ec1f142f860",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/befb26a3713c97af90d25dd12e75621ef14d91ff",
+                "reference": "befb26a3713c97af90d25dd12e75621ef14d91ff",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7"
-            },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.7-dev"
+                    "dev-master": "2.8-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Yaml\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -463,7 +506,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-01 11:25:50"
+            "time": "2016-11-14 16:15:57"
         }
     ],
     "aliases": [],
