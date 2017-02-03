@@ -1,6 +1,33 @@
 XHP classes for the Bootstrap project
 =====================================
 
+Project Status
+--------------
+
+We are not planning to actively maintain this project; however, we still
+believe it has value as an example.
+
+XHP-Bootstrap was one of the first general-purpose UI libraries for XHP;
+feedback from our users has shown several problems that ultimately make us
+believe that general-purpose UI libraries are not a good fit for XHP:
+
+ - Sites/applications should use semantic markup; Bootstrap should be an
+   implementation detail, not something that every endpoint/controller is
+   strongly tied to
+ - Strict child validation is a valuable part of XHP; it's not possible to
+   do take advantage of this in a general-purpose library. This can be
+   partially worked around through heavy usage of categories, however
+   that significantly weakens XHP's model
+ - A similar problem exists for attributes, however there is no workaround;
+   for example, many elements have an `href` attribute, which should take
+   a `string` in a general purpose library - many sites will want to ban
+   string hrefs, requiring a site-specific `URI` object instead. The only
+   way to support this would be to type all attributes as `mixed`
+
+We believe this project is still useful for reference when implementing your
+own elements. You may also find
+[the HHVM documentation site's XHP elements](https://github.com/hhvm/user-documentation/tree/master/src/site/xhp) useful as a real-world example.
+
 Overview
 --------
 
